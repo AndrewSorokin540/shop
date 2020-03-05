@@ -1,0 +1,23 @@
+.header{
+    height: 60px;
+    margin-bottom: 30px;
+}
+.header__content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 60px;
+  padding: 0 15px;
+  box-shadow: 1px 1px 5px 1px rgba(0,0,0,.5);
+  z-index: 1;
+  position: fixed;
+  width: 100%;
+  background-color: #fff;
+}
+.header__logo {
+    font-size: 20px;
+    font-weight: 700;
+}
+.header__link-to-cart{
+    
+}
