@@ -5,20 +5,8 @@ import { connect } from 'react-redux';
 
 class CatalogList extends React.Component {
 
-    state = {
-        loading: true,
-        data: []
-    }
-
-    componentDidMount() {
-        this.props.dataServise.getData()
-            .then(data => {
-                this.setState({ data });
-            })
-    }
-
     render() {
-        const list = this.state.data.map(item => (
+        const list = this.props.dataItems.map(item => (
             <div className="col-12 mb-4" key={item.id}>
                 <MiniCard title={item.title} author={item.author} price={item.price} coverImage={item.coverImage} />
             </div>
@@ -33,4 +21,6 @@ class CatalogList extends React.Component {
     }
 }
 
-export default WithDataContext(CatalogList);
+const mapStateToProps = ({ dataItems }) => ({ dataItems })
+
+export default connect(mapStateToProps)(WithDataContext(CatalogList));

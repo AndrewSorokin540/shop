@@ -1,5 +1,11 @@
 const initialState = {
-    dataItems: [],
+    dataItems: [{
+        id: 1,
+        title: 'React и Redux. Функциональная веб-разработка',
+        author: 'Алекс Бэнкс',
+        price: 550,
+        coverImage: 'https://cv9.litres.ru/pub/c/pdf-kniga/cover_415/29415793-a-benks-piter-react-i-redux-funkcionalnaya-veb-razrabotka-29415793.jpg'
+    }],
     cart: []
 }
 
