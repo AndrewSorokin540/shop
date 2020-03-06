@@ -11,13 +11,6 @@ const reducer = (state = initialState, action) => {
                 dataItems: action.payload
             }
 
-        case 'TEST_CONSOLE':
-            console.log('TEST_CONSOLE')
-            return {
-                ...state,
-                dataItems: action.payload
-            }
-
         case 'ITEM_ADD_TO_CART':
             return state
         default:

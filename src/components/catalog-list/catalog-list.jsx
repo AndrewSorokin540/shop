@@ -32,7 +32,7 @@ const mapDispatchToProps = (dispatch) => {
     return {
         fetchData: (data) => {
             dispatch({
-                type: 'TEST_CONSOLE',
+                type: 'DATA_LOADED',
                 payload: data
             })
         }
