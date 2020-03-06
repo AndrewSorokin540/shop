@@ -5,6 +5,11 @@ import { connect } from 'react-redux';
 
 class CatalogList extends React.Component {
 
+    componentDidMount() {
+        this.props.dataServise.getData()
+            .then(data => this.props.fetchData(data))
+    }
+
     render() {
         const list = this.props.dataItems.map(item => (
             <div className="col-12 mb-4" key={item.id}>
@@ -23,4 +28,15 @@ class CatalogList extends React.Component {
 
 const mapStateToProps = ({ dataItems }) => ({ dataItems })
 
-export default connect(mapStateToProps)(WithDataContext(CatalogList));
+const mapDispatchToProps = (dispatch) => {
+    return {
+        fetchData: (data) => {
+            dispatch({
+                type: 'TEST_CONSOLE',
+                payload: data
+            })
+        }
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(WithDataContext(CatalogList));
