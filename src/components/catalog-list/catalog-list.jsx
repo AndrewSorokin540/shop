@@ -13,7 +13,7 @@ class CatalogList extends React.Component {
     render() {
         const list = this.props.dataItems.map(item => (
             <div className="col-12 mb-4" key={item.id}>
-                <MiniCard title={item.title} author={item.author} price={item.price} coverImage={item.coverImage} />
+                <MiniCard itemId={item.id} title={item.title} author={item.author} price={item.price} coverImage={item.coverImage} />
             </div>
         ))
         return (

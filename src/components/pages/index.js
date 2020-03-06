@@ -1,3 +1,7 @@
 import CatalogPage from './catalog-page';
+import CartPage from './cart-page';
 
-export default CatalogPage;
+export {
+    CatalogPage,
+    CartPage
+}
