@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import './temp.scss'
 
 const CartPage = (props) => {
 
@@ -14,7 +15,7 @@ const CartPage = (props) => {
     return (
         <React.Fragment>
             <h2>Корзина</h2>
-            <div className="catalog">
+            <div className="cart-table">
                 <ul>
                     {list}
                 </ul>

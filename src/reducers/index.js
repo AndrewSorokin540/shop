@@ -15,6 +15,8 @@ const reducer = (state = initialState, action) => {
             const newItemAlreadyInCartIndex = state.cart.findIndex(item => item.id === action.payload)
             const newItemAlreadyInCart = state.cart.find(item => item.id === action.payload)
             const addedItem = state.dataItems.find(item => item.id === action.payload)
+            console.log(action)
+            console.log(addedItem)
             if (newItemAlreadyInCart) {
                 return {
                     ...state,
@@ -46,7 +48,6 @@ const reducer = (state = initialState, action) => {
         case 'ITEM_REMOVE_FROM_CART':
             const removeItem = state.cart.find(item => item.id === action.payload)
             const removeItemIndex = state.cart.findIndex(item => item.id === action.payload)
-            console.log('ITEM_REMOVE_FROM_CART', removeItem)
             if (removeItem.count > 1) {
                 return {
                     ...state,
@@ -72,7 +73,6 @@ const reducer = (state = initialState, action) => {
 
         case 'ALL_ITEMS_REMOVE_FROM_CART':
             const removeItemsIndex = state.cart.findIndex(item => item.id === action.payload)
-            console.log('ALL_ITEMS_REMOVE_FROM_CART', action.payload)
             return {
                 ...state,
                 cart: [

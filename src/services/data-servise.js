@@ -1,76 +1,205 @@
+import img1 from '../img/1.png';
+import img2 from '../img/2.png';
+import img3 from '../img/3.png';
+import img4 from '../img/4.png';
+import img5 from '../img/5.png';
+import img6 from '../img/6.png';
+import img7 from '../img/7.png';
+import img8 from '../img/8.png';
+import img9 from '../img/9.png';
+import img10 from '../img/10.png';
+import img11 from '../img/11.png';
+import img12 from '../img/12.png';
+import img13 from '../img/13.png';
+import img14 from '../img/14.png';
+import img15 from '../img/15.png';
+import img16 from '../img/16.png';
+
 export default class DataService {
 
     data = [
         {
             id: 1,
-            title: 'React и Redux. Функциональная веб-разработка',
-            author: 'Алекс Бэнкс',
-            price: 550,
-            coverImage: 'https://cv9.litres.ru/pub/c/pdf-kniga/cover_415/29415793-a-benks-piter-react-i-redux-funkcionalnaya-veb-razrabotka-29415793.jpg'
+            title: 'Фирменная',
+            price: {
+                s: 280,
+                m: 360,
+                l: 480
+            },
+            coverImage: img1,
+            ingredientsInRus: 'Бекон, сервелат, корнишоны, маслины, лук фри, горчица дижонская, сыр Моцарелла, соус томатный'
         },
         {
             id: 2,
-            title: 'Изучаем Node. Переходим на сторону сервера',
-            author: 'Шелли Пауэрс',
-            price: 529,
-            coverImage: 'https://cv5.litres.ru/pub/c/pdf-kniga/cover_330/6376456-shelli-pauers-izuchaem-node-js.jpg'
+            title: 'Барбекю',
+            price: {
+                s: 280,
+                m: 360,
+                l: 480
+            },
+            coverImage: img2,
+            ingredientsInRus: 'Филе цыпленка, ветчина, бекон, шампиньоны, сыр Моцарелла, соус BBQ'
         },
         {
             id: 3,
-            title: 'Git для профессионального программиста',
-            author: 'Скотт Чакон',
-            price: 907,
-            coverImage: 'https://cv0.litres.ru/pub/c/pdf-kniga/cover_330/16901909-b-shtraub-git-dlya-professionalnogo-programmista-16901909.jpg'
+            title: 'Карбонара',
+            price: {
+                s: 280,
+                m: 360,
+                l: 480
+            },
+            coverImage: img3,
+            ingredientsInRus: 'Бекон, томаты, сыры Пармезан и Моцарелла, соус чесночный'
         },
         {
             id: 4,
-            title: 'HTML и CSS. Разработка и дизайн веб-сайтов',
-            author: 'Джон Дакетт',
-            price: 590,
-            coverImage: 'https://cv9.litres.ru/pub/c/pdf-kniga/cover_330/38272898-dzhon-dakett-html-i-css-razrabotka-i-dizayn-veb-saytov-38272898.jpg'
+            title: 'Охотничья',
+            price: {
+                s: 280,
+                m: 360,
+                l: 480
+            },
+            coverImage: img4,
+            ingredientsInRus: 'Колбаски Охотничьи, бекон, опята и лук маринованные, сыр Моцарелла, соус томатный'
         },
         {
             id: 5,
-            title: 'Python. Программирование для начинающих',
-            author: 'Майк МакГрат',
-            price: 199,
-            coverImage: 'https://cv3.litres.ru/pub/c/pdf-kniga/cover_330/14108932-mayk-makgrat-python-programmirovanie-dlya-nachinauschih-14108932.jpg'
+            title: 'Пепперони',
+            price: {
+                s: 280,
+                m: 360,
+                l: 480
+            },
+            coverImage: img5,
+            ingredientsInRus: 'Пепперони, сыр Моцарелла, соус томатный'
         },
         {
             id: 6,
-            title: 'Laravel. Быстрая разработка современных динамических Web-сайтов на PHP, MySQL, HTML и CSS',
-            author: 'Владимир Дронов',
-            price: 712,
-            coverImage: 'https://cv2.litres.ru/pub/c/pdf-kniga/cover_330/39286527-vladimir-dronov-laravel-bystraya-razrabotka-sovremennyh-dinamiche-39286527.jpg'
+            title: 'Пепперони с двойным сыром',
+            price: {
+                s: 280,
+                m: 360,
+                l: 480
+            },
+            coverImage: img6,
+            ingredientsInRus: 'Пепперони, сыр Моцарелла, соус томатный'
         },
         {
             id: 7,
-            title: 'Angular для профессионалов',
-            author: 'Адам Фримен',
-            price: 549,
-            coverImage: 'https://cv7.litres.ru/pub/c/pdf-kniga/cover_330/29414673-adam-frimen-angular-dlya-professionalov-29414673.jpg'
+            title: '6 сыров',
+            price: {
+                s: 280,
+                m: 360,
+                l: 480
+            },
+            coverImage: img7,
+            ingredientsInRus: 'Пармезан, Дор-блю, Гауда, Чеддер оранжевый, творожный, Моцарелла'
         },
         {
             id: 8,
-            title: 'ECMAScript 6 для разработчиков',
-            author: 'Николас Закас',
-            price: 765,
-            coverImage: 'https://cv3.litres.ru/pub/c/pdf-kniga/cover_330/24426234-nikolas-zakas-ecmascript-6-dlya-razrabotchikov-24426234.jpg'
+            title: 'Острая',
+            price: {
+                s: 280,
+                m: 360,
+                l: 480
+            },
+            coverImage: img8,
+            ingredientsInRus: 'Филе цыпленка, перец халапеньо, сыр Моцарелла, маринованный лук, лечо, томатный соус'
         },
         {
             id: 9,
-            title: 'Bootstrap в примерах',
-            author: 'Сильвио Морето',
-            price: 460,
-            coverImage: 'https://cv2.litres.ru/pub/c/pdf-kniga/cover_330/22780728-silvio-moreto-bootstrap-v-primerah-22780728.jpg'
-        }
+            title: 'Чикен рэнч',
+            price: {
+                s: 280,
+                m: 360,
+                l: 480
+            },
+            coverImage: img9,
+            ingredientsInRus: 'Филе цыпленка, томаты, сыр Моцарелла, соус Ранч'
+        },
+        {
+            id: 10,
+            title: 'Мясная',
+            price: {
+                s: 280,
+                m: 360,
+                l: 480
+            },
+            coverImage: img10,
+            ingredientsInRus: 'Филе цыпленка, бекон, сервелат, ветчина, колбаски Охотничьи, томаты, сыр Моцарелла , соус томатный'
+        },
+        {
+            id: 11,
+            title: 'С ветчиной и грибами',
+            price: {
+                s: 280,
+                m: 360,
+                l: 480
+            },
+            coverImage: img11,
+            ingredientsInRus: 'Ветчина, шампиньоны, сыр Моцарелла, сыр Чеддер оранжевый, соус чесночный'
+        },
+        {
+            id: 12,
+            title: 'Гавайская',
+            price: {
+                s: 280,
+                m: 360,
+                l: 480
+            },
+            coverImage: img12,
+            ingredientsInRus: 'Филе цыпленка, ветчина, ананас, сыр Моцарелла, соус розовый'
+        },
+        {
+            id: 13,
+            title: 'Барбекю микс',
+            price: {
+                s: 280,
+                m: 360,
+                l: 480
+            },
+            coverImage: img13,
+            ingredientsInRus: 'Колбаски охотничьи, бекон, ветчина, корнишоны, маслины, сыр Моцарелла, лук маринованный, соусы чили, томатный и BBQ'
+        },
+        {
+            id: 14,
+            title: 'Грибная',
+            price: {
+                s: 280,
+                m: 360,
+                l: 480
+            },
+            coverImage: img14,
+            ingredientsInRus: 'Ветчина, сервелат, шампиньоны, сыр Моцарелла, соус Ранч, итальянские травы'
+        },
+        {
+            id: 15,
+            title: 'Вегетарианская',
+            price: {
+                s: 280,
+                m: 360,
+                l: 480
+            },
+            coverImage: img15,
+            ingredientsInRus: 'Сыр моцарелла, сыр Творожный, томаты, маслины, лечо, лук маринованный, соусы ранч, чесночный, масло острое'
+        },
+        {
+            id: 16,
+            title: 'Nutella',
+            price: {
+                s: 280,
+                m: 360,
+                l: 480
+            },
+            coverImage: img16,
+            ingredientsInRus: 'Сыр творожный, сметана, персик, зефир Маршмеллоу, nutella'
+        },
+
     ];
     
     getData() {
         return new Promise((resolve) => {
-            setTimeout(() => {
-                resolve(this.data)
-            }, 1000)
+            resolve(this.data)
         })
     }
 }

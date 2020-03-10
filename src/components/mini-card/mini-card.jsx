@@ -2,17 +2,17 @@ import React from 'react';
 import './mini-card.scss';
 import { connect } from 'react-redux';
 
-const MiniCard = ({ itemId, title, author, price, coverImage, itemAddToCart }) => {
+const MiniCard = ({ id, title, ingredientsInRus, price, coverImage, itemAddToCart }) => {
     return (
         <div className="mini-card">
             <div className="mini-card__img" style={{ backgroundImage: `url(${coverImage})` }} />
             <div className="mini-card__body">
                 <div className="mini-card__content">
                     <div className="mini-card__item-title">{title}</div>
-                    <div className="mini-card__item-subtitle">{author}</div>
-                    <div className="mini-card__item-price">{price} руб.</div>
+                    <div className="mini-card__item-description">{ingredientsInRus}</div>
+                    <div className="mini-card__item-price"> от {price.s} руб.</div>
                 </div>
-                <button onClick={() => itemAddToCart(itemId)}>Купить</button>
+                <button className="button button-primary" onClick={() => itemAddToCart(id)}>Купить</button>
             </div>
         </div>
     );
