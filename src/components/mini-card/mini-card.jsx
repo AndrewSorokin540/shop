@@ -2,7 +2,7 @@ import React from 'react';
 import './mini-card.scss';
 import { connect } from 'react-redux';
 
-const MiniCard = ({ id, title, ingredientsInRus, price, coverImage, itemAddToCart }) => {
+const MiniCard = ({ id, title, ingredientsInRus, price, coverImage, openModal }) => {
     return (
         <div className="mini-card">
             <div className="mini-card__img" style={{ backgroundImage: `url(${coverImage})` }} />
@@ -12,7 +12,7 @@ const MiniCard = ({ id, title, ingredientsInRus, price, coverImage, itemAddToCar
                     <div className="mini-card__item-description">{ingredientsInRus}</div>
                     <div className="mini-card__item-price"> от {price.s} руб.</div>
                 </div>
-                <button className="button button-primary" onClick={() => itemAddToCart(id)}>Купить</button>
+                <button className="button button-primary" onClick={() => openModal(id)}>Купить</button>
             </div>
         </div>
     );
@@ -20,10 +20,10 @@ const MiniCard = ({ id, title, ingredientsInRus, price, coverImage, itemAddToCar
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        itemAddToCart: (itemId) => {
+        openModal: (id) => {
             dispatch({
-                type: 'ITEM_ADD_TO_CART',
-                payload: itemId
+                type: 'MODAL_OPEN',
+                payload: id
             })
         }
     }

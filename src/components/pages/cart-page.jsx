@@ -31,19 +31,19 @@ const mapDispatchToProps = (dispatch) => {
         itemRemoveFromCart: (itemId) => {
             dispatch({
                 type: 'ITEM_REMOVE_FROM_CART',
-                payload: itemId
+                payload: {itemId}
             })
         },
         allItemsRemoveFromCart: (itemId) => {
             dispatch({
                 type: 'ALL_ITEMS_REMOVE_FROM_CART',
-                payload: itemId
+                payload: {itemId}
             })
         },
         addItemToCart: (itemId) => {
             dispatch({
                 type: 'ITEM_ADD_TO_CART',
-                payload: itemId
+                payload: {itemId}
             })
         }
     }

@@ -1,0 +1,24 @@
+.modal-order{
+    display: flex;
+    &__img{
+        width: 360px;
+        height: 360px;
+        flex-shrink: 0;
+        margin-right: 15px;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+    }
+    &__content{
+        width: 300px;
+    }
+    &__title{
+
+    }
+    &__details{
+
+    }
+    &__ingridients{
+
+    }
+}
