@@ -1,3 +1,5 @@
+@import '../../stylesheets/abstracts/variables';
+
 .modal-order{
     display: flex;
     &__img{
@@ -10,15 +12,35 @@
         background-size: contain;
     }
     &__content{
+        display: flex;
+        flex-direction: column;
         width: 300px;
     }
     &__title{
-
+        margin-bottom: .25em;
     }
     &__details{
-
+        color: $mid-grey;
+        font-style: italic;
     }
     &__ingridients{
-
+        flex-grow: 1;
+    }
+    &__number{
+        margin-bottom: 1em;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 1.1em;
+    }
+    &__num-btn{
+        border: none;
+        background: none;
+        width: 40px;
+        cursor: pointer;
+    }
+    &__button-to-cart{
+        display: block;
+        width: 100%;
     }
 }

@@ -30,14 +30,16 @@ class ModalOrder extends React.Component {
                 <div className="modal-order__content">
                     <h2 className="modal-order__title">{title}</h2>
                     <div className="modal-order__details">25 см, традиционное тесто, 430г</div>
-                    <div className="modal-order__ingridients">{ingredientsInRus}</div>
-                    <div>
+                    <p className="modal-order__ingridients">{ingredientsInRus}</p>
+                    <div className='modal-order__number'>
                         Количество:
-                        <button className='button button-primary' onClick={() => this.increaseNumber()}>+</button>
-                        {this.state.itemsNumber}
-                        <button className='button button-primary' onClick={() => this.decreaseNumber()}>-</button>
+                        <div>
+                            <button className='modal-order__num-btn decreace' onClick={() => this.decreaseNumber()}>-</button>
+                            {this.state.itemsNumber}
+                            <button className='modal-order__num-btn increace' onClick={() => this.increaseNumber()}>+</button>
+                        </div>
                     </div>
-                    <button className='button button-primary' onClick={() => this.props.itemAddToCart(id, this.state.itemsNumber)}>В корзину</button>
+                    <button className='modal-order__button-to-cart button button-primary' onClick={() => this.props.itemAddToCart(id, this.state.itemsNumber)}>В корзину</button>
                 </div>
             </div>
         );

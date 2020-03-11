@@ -2,6 +2,7 @@ import React from 'react';
 import MiniCard from '../mini-card';
 import WithDataContext from '../HOC';
 import { connect } from 'react-redux';
+import './catalog-list.scss';
 
 class CatalogList extends React.Component {
 
@@ -12,7 +13,7 @@ class CatalogList extends React.Component {
 
     render() {
         const list = this.props.dataItems.map(item => (
-            <div className="col-4 mb-4" key={item.id}>
+            <div className="col-12 col-sm-6 col-md-4 catalog-item" key={item.id}>
                 <MiniCard {...item} />
             </div>
         ))
