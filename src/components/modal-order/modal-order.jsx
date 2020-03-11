@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { itemAddToCart } from '../../actions';
+import { itemAddToCart, closeModal } from '../../actions';
 import './modal-order.scss';
 
 class ModalOrder extends React.Component {
@@ -23,9 +23,14 @@ class ModalOrder extends React.Component {
         }
     }
 
+    onAddItem() {
+        this.props.itemAddToCart(this.props.dataItems[this.props.openedItemId - 1].id, this.state.itemsNumber)
+        this.props.closeModal()
+    }
+    
     render() {
-        const { id, title, price, coverImage, ingredientsInRus } = this.props.dataItems[this.props.openedItemId - 1]
-        console.log(this.props.dataItems[this.props.openedItemId - 1])
+        console.log(this)
+        const { title, price, coverImage, ingredientsInRus } = this.props.dataItems[this.props.openedItemId - 1]
         return (
             <div className='modal-order'>
                 <div className="modal-order__img" style={{ backgroundImage: `url(${coverImage})` }} />
@@ -41,15 +46,18 @@ class ModalOrder extends React.Component {
                             <button className='modal-order__num-btn increace' onClick={() => this.increaseNumber()}>+</button>
                         </div>
                     </div>
-                    <button className='modal-order__button-to-cart button button-primary' onClick={() => this.props.itemAddToCart(id, this.state.itemsNumber)}>В корзину за {price.s}р.</button>
+                    <button className='modal-order__button-to-cart button button-primary'
+                        onClick={() => this.onAddItem()}>
+                        В корзину за {price.s}р.
+                    </button>
                 </div>
             </div>
         );
     }
 }
 
-const mapStateToProps = ({ dataItems, openedItemId }) => ({ dataItems, openedItemId })
+const mapStateToProps = ({ dataItems, modal: { openedItemId } }) => ({ dataItems, openedItemId })
 
-const mapDispatchToProps = { itemAddToCart }
+const mapDispatchToProps = { itemAddToCart, closeModal }
 
 export default connect(mapStateToProps, mapDispatchToProps)(ModalOrder);

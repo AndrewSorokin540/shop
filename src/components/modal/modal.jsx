@@ -24,7 +24,7 @@ class Modal extends React.Component {
     }
 }
 
-const mapStateToProps = ({ isModalOpen }) => ({ isModalOpen })
+const mapStateToProps = ({ modal: { isModalOpen } }) => ({ isModalOpen })
 
 const mapDispatchToProps = { closeModal }
 

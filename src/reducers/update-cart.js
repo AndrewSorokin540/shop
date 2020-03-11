@@ -1,44 +1,9 @@
-import updateData from './update-data';
-import updateModal from './update-modal';
-import updateCart from './update-cart';
+export const updateCart = (state, action) => {
 
-const initialState = {
-    dataItems: [],
-    cart: [],
-    modal: {
-        isModalOpen: false,
-        openedItemId: null,
+    if (!state) {
+        return []
     }
-}
 
-
-
-const updateModal1 = (state, action) => {
-    switch (action.type) {
-        case 'MODAL_OPEN':
-            return {
-                isModalOpen: true,
-                openedItemId: action.payload
-            }
-        case 'MODAL_CLOSE':
-            return {
-                isModalOpen: false
-            }
-        default:
-            return state.modal
-    }
-}
-
-const updateData1 = (state, action) => {
-    switch (action.type) {
-        case 'DATA_LOADED':
-            return action.payload
-        default:
-            return state.dataItems
-    }
-}
-
-const updateCart1 = (state, action) => {
     switch (action.type) {
         case 'ITEM_ADD_TO_CART':
             const newItemAlreadyInCartIndex = state.cart.findIndex(item => item.id === action.payload.itemId)
@@ -93,16 +58,8 @@ const updateCart1 = (state, action) => {
                 ...state.cart.slice(removeItemsIndex + 1)
             ]
         default:
-            return state.cart
+            return state.cart;
     }
 }
 
-const reducer = (state, action) => {
-    return {
-        dataItems: updateData(state, action),
-        cart: updateCart(state, action),
-        modal: updateModal(state, action)
-    };
-}
-
-export default reducer;
+export default updateCart;
