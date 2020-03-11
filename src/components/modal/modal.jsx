@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { closeModal } from '../../actions';
 import './modal.scss';
 
 class Modal extends React.Component {
@@ -23,16 +24,8 @@ class Modal extends React.Component {
     }
 }
 
-const mapStateToProps = ({ isModalOpen }) => ({isModalOpen})
+const mapStateToProps = ({ isModalOpen }) => ({ isModalOpen })
 
-const mapDispatchToProps = (dispatch) => {
-    return {
-        closeModal: () => {
-            dispatch({
-                type: 'MODAL_CLOSE'
-            })
-        }
-    }
-}
+const mapDispatchToProps = { closeModal }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Modal);

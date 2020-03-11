@@ -1,17 +1,18 @@
+@import '../../stylesheets/abstracts/variables';
+
 .fixed-cart{
     position: fixed;
     right: 0;
     bottom: 0;
     background-color: #fff;
-    border: 1px solid #B0302D;
     transition: transform .2s;
     cursor: pointer;
 
     &--hidden{
-        transform: translateY(calc(100% - 53px));
+        transform: translateY(calc(100% - 52px));
     }
     &__header{
-        background-color: #B0302D;
+        background-color: $brand-color;
         color: #fff;
         padding: 15px;
     }
@@ -31,6 +32,15 @@
         &:not(:last-child){
             margin-bottom: 10px;
         }
+    }
+    &__item-title{
+        min-width: 200px;
+    }
+    &__number{
+        color: $mid-grey;
+        font-style: italic;
+        font-size: calc(1em - 2px);
+        font-weight: lighter;
     }
     &__buttons{
         margin-left: 20px;

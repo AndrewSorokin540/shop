@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { itemAddToCart } from '../../actions';
 import './modal-order.scss';
 
 class ModalOrder extends React.Component {
@@ -24,6 +25,7 @@ class ModalOrder extends React.Component {
 
     render() {
         const { id, title, price, coverImage, ingredientsInRus } = this.props.dataItems[this.props.openedItemId - 1]
+        console.log(this.props.dataItems[this.props.openedItemId - 1])
         return (
             <div className='modal-order'>
                 <div className="modal-order__img" style={{ backgroundImage: `url(${coverImage})` }} />
@@ -39,7 +41,7 @@ class ModalOrder extends React.Component {
                             <button className='modal-order__num-btn increace' onClick={() => this.increaseNumber()}>+</button>
                         </div>
                     </div>
-                    <button className='modal-order__button-to-cart button button-primary' onClick={() => this.props.itemAddToCart(id, this.state.itemsNumber)}>В корзину</button>
+                    <button className='modal-order__button-to-cart button button-primary' onClick={() => this.props.itemAddToCart(id, this.state.itemsNumber)}>В корзину за {price.s}р.</button>
                 </div>
             </div>
         );
@@ -48,15 +50,6 @@ class ModalOrder extends React.Component {
 
 const mapStateToProps = ({ dataItems, openedItemId }) => ({ dataItems, openedItemId })
 
-const mapDispatchToProps = (dispatch) => {
-    return {
-        itemAddToCart: (itemId, count) => {
-            dispatch({
-                type: 'ITEM_ADD_TO_CART',
-                payload: { itemId, count }
-            })
-        }
-    }
-}
+const mapDispatchToProps = { itemAddToCart }
 
 export default connect(mapStateToProps, mapDispatchToProps)(ModalOrder);

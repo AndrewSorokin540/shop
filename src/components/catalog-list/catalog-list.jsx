@@ -2,13 +2,14 @@ import React from 'react';
 import MiniCard from '../mini-card';
 import WithDataContext from '../HOC';
 import { connect } from 'react-redux';
+import { dataLoaded } from '../../actions';
 import './catalog-list.scss';
 
 class CatalogList extends React.Component {
 
     componentDidMount() {
         this.props.dataServise.getData()
-            .then(data => this.props.fetchData(data))
+            .then(data => this.props.dataLoaded(data))
     }
 
     render() {
@@ -29,15 +30,6 @@ class CatalogList extends React.Component {
 
 const mapStateToProps = ({ dataItems }) => ({ dataItems })
 
-const mapDispatchToProps = (dispatch) => {
-    return {
-        fetchData: (data) => {
-            dispatch({
-                type: 'DATA_LOADED',
-                payload: data
-            })
-        }
-    }
-}
+const mapDispatchToProps = { dataLoaded }
 
 export default connect(mapStateToProps, mapDispatchToProps)(WithDataContext(CatalogList));

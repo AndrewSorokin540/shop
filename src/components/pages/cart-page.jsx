@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import './temp.scss'
+import { itemRemoveFromCart, allItemsRemoveFromCart, itemAddToCart } from '../../actions';
 
 const CartPage = (props) => {
 
@@ -26,27 +26,6 @@ const CartPage = (props) => {
 
 const mapStateToProps = ({ cart }) => ({ cart })
 
-const mapDispatchToProps = (dispatch) => {
-    return {
-        itemRemoveFromCart: (itemId) => {
-            dispatch({
-                type: 'ITEM_REMOVE_FROM_CART',
-                payload: {itemId}
-            })
-        },
-        allItemsRemoveFromCart: (itemId) => {
-            dispatch({
-                type: 'ALL_ITEMS_REMOVE_FROM_CART',
-                payload: {itemId}
-            })
-        },
-        addItemToCart: (itemId) => {
-            dispatch({
-                type: 'ITEM_ADD_TO_CART',
-                payload: {itemId}
-            })
-        }
-    }
-}
+const mapDispatchToProps = { itemRemoveFromCart, allItemsRemoveFromCart, itemAddToCart }
 
 export default connect(mapStateToProps, mapDispatchToProps)(CartPage);
