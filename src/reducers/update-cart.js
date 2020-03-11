@@ -15,7 +15,7 @@ export const updateCart = (state, action) => {
                     {
                         id: addedItem.id,
                         title: addedItem.title,
-                        count: newItemAlreadyInCart.count + 1
+                        count: newItemAlreadyInCart.count + action.payload.count
                     },
                     ...state.cart.slice(newItemAlreadyInCartIndex + 1)
                 ]
