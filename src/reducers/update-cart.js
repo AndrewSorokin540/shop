@@ -6,11 +6,19 @@ export const updateCart = (state, action) => {
 
     switch (action.type) {
         case 'ITEM_ADD_TO_CART':
+            console.log('!!!!!!!!!!!!!!!!',state)
+
+            console.log(action.payload)
+            
             const newItemAlreadyInCartIndex = state.cart.findIndex(item => item.id === action.payload.itemId)
+            console.log(newItemAlreadyInCartIndex)
+            
             const newItemAlreadyInCart = state.cart.find(item => item.id === action.payload.itemId)
+            console.log(newItemAlreadyInCart)
+            
             const addedItem = state.dataItems.find(item => item.id === action.payload.itemId)
+            console.log(addedItem)
             if (newItemAlreadyInCart) {
-                console.log(addedItem)
                 return [
                     ...state.cart.slice(0, newItemAlreadyInCartIndex),
                     {

@@ -1,0 +1,15 @@
+.cart-table{
+    width: 100%;
+}
+.cart-table tr{
+    &:nth-child(odd){
+        background-color: #aaaaaa45;
+    }
+    td:nth-child(1){
+        padding-left: 15px;
+    }
+}
+.cart-table__td-button{
+    width: 1%;
+    white-space: nowrap;
+}

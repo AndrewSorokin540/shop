@@ -24,7 +24,6 @@ class ModalOrder extends React.Component {
     }
 
     onAddItem() {
-        console.log(777777,this.props)
         this.props.itemAddToCart(this.props.openedItemId, this.state.itemsNumber)
         this.props.closeModal()
     }

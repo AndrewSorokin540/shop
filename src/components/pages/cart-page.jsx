@@ -1,26 +1,23 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { itemRemoveFromCart, allItemsRemoveFromCart, itemAddToCart } from '../../actions';
+import './cart-page.scss';
 
 const CartPage = (props) => {
-
-    const list = props.cart.map((item, index) => (
-        <li key={index}>
-            {item.title} {item.count && (item.count)}
-            <button onClick={() => props.itemRemoveFromCart(item.id)}>-</button>
-            <button onClick={() => props.allItemsRemoveFromCart(item.id)}>---</button>
-            <button onClick={() => props.addItemToCart(item.id)}>+</button>
-        </li>
+    console.log(props.cart)
+    const tableBody = props.cart.map((item, index) => (
+        <tr key={index}>
+            <td>{item.title}</td>
+            <td>{item.count && (item.count)}</td>
+            <td className='cart-table__td-button'><button className='button button-primary' onClick={() => props.itemRemoveFromCart(item.id)}>-</button></td>
+            <td className='cart-table__td-button'><button className='button button-primary' onClick={() => props.allItemsRemoveFromCart(item.id)}>Удалить все</button></td>
+            <td className='cart-table__td-button'><button className='button button-primary' onClick={() => props.itemAddToCart(item.id, 1)}>+</button></td>
+        </tr>
     ))
     return (
-        <React.Fragment>
-            <h2>Корзина</h2>
-            <div className="cart-table">
-                <ul>
-                    {list}
-                </ul>
-            </div>
-        </React.Fragment>
+        <table className="cart-table">
+            {tableBody}
+        </table>
     );
 }
 

@@ -25,7 +25,7 @@ class FixedCart extends React.Component {
                 <div className='fixed-cart__buttons'>
                     <button className='button button-primary' onClick={() => this.props.itemRemoveFromCart(item.id)}>-</button>
                     <button className='button button-primary' onClick={() => this.props.allItemsRemoveFromCart(item.id)}>---</button>
-                    <button className='button button-primary' onClick={() => {this.props.itemAddToCart(item.id, 1); console.log(item.id)}}>+</button>
+                    <button className='button button-primary' onClick={() => this.props.itemAddToCart(item.id, 1)}>+</button>
                 </div>
             </li>
         ))

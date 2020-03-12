@@ -4,7 +4,7 @@ import WithDataContext from '../HOC';
 
 const PizzaPage = ({dataServise: {getDrinks}}) => {
     return (
-        <CatalogList getData={getDrinks} />
+        <CatalogList getData={getDrinks} minicardType='noBg' />
     );
 }
 

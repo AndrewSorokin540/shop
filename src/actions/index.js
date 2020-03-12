@@ -18,6 +18,11 @@ export const allItemsRemoveFromCart = (itemId) => ({
     payload: { itemId }
 })
 
+export const openModal = (itemId) => ({
+    type: 'MODAL_OPEN',
+    payload: itemId
+})
+
 export const closeModal = () => ({
     type: 'MODAL_CLOSE'
 })

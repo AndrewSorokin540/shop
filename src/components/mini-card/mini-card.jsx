@@ -1,10 +1,12 @@
 import React from 'react';
 import './mini-card.scss';
 import { connect } from 'react-redux';
+import { openModal } from '../../actions';
 
-const MiniCard = ({ id, title, ingredientsInRus, price, coverImage, openModal }) => {
+const MiniCard = ({ id, title, ingredientsInRus, price, coverImage, openModal, minicardType }) => {
+    const classes = `mini-card ${minicardType === 'cuttingBoard' ? 'cutting-board' : ''}`
     return (
-        <div className="mini-card">
+        <div className={classes}>
             <div className="mini-card__img" style={{ backgroundImage: `url(${coverImage})` }} />
             <div className="mini-card__body">
                 <div className="mini-card__content">
@@ -18,15 +20,6 @@ const MiniCard = ({ id, title, ingredientsInRus, price, coverImage, openModal })
     );
 }
 
-const mapDispatchToProps = (dispatch) => {
-    return {
-        openModal: (id) => {
-            dispatch({
-                type: 'MODAL_OPEN',
-                payload: id
-            })
-        }
-    }
-}
+const mapDispatchToProps = { openModal }
 
 export default connect(null, mapDispatchToProps)(MiniCard);

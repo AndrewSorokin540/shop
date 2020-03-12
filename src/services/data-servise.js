@@ -199,7 +199,7 @@ export default class DataService {
             ingredientsInRus: 'Сыр творожный, сметана, персик, зефир Маршмеллоу, nutella'
         }
     ]
-    
+
     drinks = [
         {
             id: 17,
@@ -229,7 +229,7 @@ export default class DataService {
 
     getPizza = () => {
         return new Promise((resolve) => {
-           resolve(this.pizza)
+            resolve(this.pizza)
         })
     }
 

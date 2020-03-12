@@ -4,11 +4,9 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    background-image: url(../../img/item-bg.png);
     background-size: cover;
     background-position: center;
     border-radius: 10px;
-    box-shadow: 1px 2px 9px 3px rgba(0,0,0,.4);
     &__img{
         padding-bottom: 100%;
         background-repeat: no-repeat;
@@ -36,5 +34,10 @@
         font-weight: 600;
         font-size: 1.2em;
         margin-bottom: .5em;
+    }
+
+    &.cutting-board{
+        background-image: url(../../img/item-bg.png);
+        box-shadow: 1px 2px 9px 3px rgba(0,0,0,.4);
     }
 }
