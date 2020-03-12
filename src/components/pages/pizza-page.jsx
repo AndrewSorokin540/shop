@@ -1,10 +1,11 @@
 import React from 'react';
 import CatalogList from '../catalog-list';
+import WithDataContext from '../HOC';
 
-const PizzaPage = () => {
+const PizzaPage = ({dataServise: {getPizza}}) => {
     return (
-        <CatalogList />
+        <CatalogList getData={getPizza} />
     );
 }
 
-export default PizzaPage;
+export default WithDataContext(PizzaPage);

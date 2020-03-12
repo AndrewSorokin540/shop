@@ -29,7 +29,6 @@ class ModalOrder extends React.Component {
     }
     
     render() {
-        console.log(this)
         const { title, price, coverImage, ingredientsInRus } = this.props.dataItems[this.props.openedItemId - 1]
         return (
             <div className='modal-order'>

@@ -199,9 +199,10 @@ export default class DataService {
             ingredientsInRus: 'Сыр творожный, сметана, персик, зефир Маршмеллоу, nutella'
         }
     ]
+    
     drinks = [
         {
-            id: 1,
+            id: 17,
             title: 'Coca-Cola',
             price: {
                 s: 80
@@ -209,7 +210,7 @@ export default class DataService {
             coverImage: imgCola
         },
         {
-            id: 1,
+            id: 18,
             title: 'Fanta',
             price: {
                 s: 80
@@ -217,7 +218,7 @@ export default class DataService {
             coverImage: imgFanta
         },
         {
-            id: 1,
+            id: 19,
             title: 'Sprite',
             price: {
                 s: 80
@@ -226,13 +227,13 @@ export default class DataService {
         }
     ]
 
-    getPizza() {
+    getPizza = () => {
         return new Promise((resolve) => {
-            resolve(this.pizza)
+           resolve(this.pizza)
         })
     }
 
-    getDrinks() {
+    getDrinks = () => {
         return new Promise((resolve) => {
             resolve(this.drinks)
         })

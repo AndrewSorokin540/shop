@@ -1,6 +1,5 @@
 import React from 'react';
 import MiniCard from '../mini-card';
-import WithDataContext from '../HOC';
 import { connect } from 'react-redux';
 import { dataLoaded } from '../../actions';
 import './catalog-list.scss';
@@ -8,11 +7,20 @@ import './catalog-list.scss';
 class CatalogList extends React.Component {
 
     componentDidMount() {
-        this.props.dataServise.getPizza()
+        this.props.getData()
             .then(data => this.props.dataLoaded(data))
     }
 
     render() {
+        if (!this.props.dataItems) {
+            return (
+                <div className="catalog">
+                    <div className="row">
+                        Loading...
+                    </div>
+                </div>
+            )
+        }
         const list = this.props.dataItems.map(item => (
             <div className="col-12 col-sm-6 col-md-4 catalog-item" key={item.id}>
                 <MiniCard {...item} />
@@ -32,4 +40,4 @@ const mapStateToProps = ({ dataItems }) => ({ dataItems })
 
 const mapDispatchToProps = { dataLoaded }
 
-export default connect(mapStateToProps, mapDispatchToProps)(WithDataContext(CatalogList));
+export default connect(mapStateToProps, mapDispatchToProps)(CatalogList);
