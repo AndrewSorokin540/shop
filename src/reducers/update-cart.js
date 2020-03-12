@@ -10,6 +10,7 @@ export const updateCart = (state, action) => {
             const newItemAlreadyInCart = state.cart.find(item => item.id === action.payload.itemId)
             const addedItem = state.dataItems.find(item => item.id === action.payload.itemId)
             if (newItemAlreadyInCart) {
+                console.log(addedItem)
                 return [
                     ...state.cart.slice(0, newItemAlreadyInCartIndex),
                     {

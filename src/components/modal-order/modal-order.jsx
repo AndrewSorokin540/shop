@@ -24,12 +24,13 @@ class ModalOrder extends React.Component {
     }
 
     onAddItem() {
-        this.props.itemAddToCart(this.props.dataItems[this.props.openedItemId - 1].id, this.state.itemsNumber)
+        console.log(777777,this.props)
+        this.props.itemAddToCart(this.props.openedItemId, this.state.itemsNumber)
         this.props.closeModal()
     }
     
     render() {
-        const { title, price, coverImage, ingredientsInRus } = this.props.dataItems[this.props.openedItemId - 1]
+        const { title, price, coverImage, ingredientsInRus } = this.props.dataItems.find(item => item.id === this.props.openedItemId)
         return (
             <div className='modal-order'>
                 <div className="modal-order__img" style={{ backgroundImage: `url(${coverImage})` }} />
