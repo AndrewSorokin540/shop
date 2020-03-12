@@ -1,6 +1,6 @@
 import React from 'react';
 import Header from '../header';
-import { CatalogPage } from '../pages';
+import { PizzaPage } from '../pages';
 import { DataProvider } from '../data-service-context';
 import DataService from '../../services/data-servise';
 import { Provider } from 'react-redux';
@@ -21,7 +21,7 @@ const App = () => {
                 <main>
                     <DataProvider value={dataServise}>
                         <div className="container">
-                            <CatalogPage />
+                            <PizzaPage />
                         </div>
                         <FixedCart />
                     </DataProvider>

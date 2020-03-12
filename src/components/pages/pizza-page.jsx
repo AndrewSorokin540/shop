@@ -1,10 +1,10 @@
 import React from 'react';
 import CatalogList from '../catalog-list';
 
-const CatalogPage = () => {
+const PizzaPage = () => {
     return (
         <CatalogList />
     );
 }
 
-export default CatalogPage;
+export default PizzaPage;

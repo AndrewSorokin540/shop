@@ -1,7 +1,7 @@
-import CatalogPage from './catalog-page';
+import PizzaPage from './pizza-page';
 import CartPage from './cart-page';
 
 export {
-    CatalogPage,
+    PizzaPage,
     CartPage
 }

@@ -8,7 +8,7 @@ import './catalog-list.scss';
 class CatalogList extends React.Component {
 
     componentDidMount() {
-        this.props.dataServise.getData()
+        this.props.dataServise.getPizza()
             .then(data => this.props.dataLoaded(data))
     }
 
