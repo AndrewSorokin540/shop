@@ -4,11 +4,13 @@ import { itemRemoveFromCart, allItemsRemoveFromCart, itemAddToCart } from '../..
 import './cart-page.scss';
 
 const CartPage = (props) => {
-    console.log(props.cart)
+    if (props.cart.length < 1) {
+        return <h2>Корзина пуста</h2>
+    }
     const tableBody = props.cart.map((item, index) => (
         <tr key={index}>
             <td>{item.title}</td>
-            <td>{item.count && (item.count)}</td>
+            <td className='text-center'>{item.count}</td>
             <td className='cart-table__td-button'><button className='button button-primary' onClick={() => props.itemRemoveFromCart(item.id)}>-</button></td>
             <td className='cart-table__td-button'><button className='button button-primary' onClick={() => props.allItemsRemoveFromCart(item.id)}>Удалить все</button></td>
             <td className='cart-table__td-button'><button className='button button-primary' onClick={() => props.itemAddToCart(item.id, 1)}>+</button></td>
@@ -16,7 +18,9 @@ const CartPage = (props) => {
     ))
     return (
         <table className="cart-table">
-            {tableBody}
+            <tbody>
+                {tableBody}
+            </tbody>
         </table>
     );
 }

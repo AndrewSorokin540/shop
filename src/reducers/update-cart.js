@@ -6,24 +6,16 @@ export const updateCart = (state, action) => {
 
     switch (action.type) {
         case 'ITEM_ADD_TO_CART':
-            console.log('!!!!!!!!!!!!!!!!',state)
-
-            console.log(action.payload)
-            
             const newItemAlreadyInCartIndex = state.cart.findIndex(item => item.id === action.payload.itemId)
-            console.log(newItemAlreadyInCartIndex)
-            
             const newItemAlreadyInCart = state.cart.find(item => item.id === action.payload.itemId)
-            console.log(newItemAlreadyInCart)
-            
-            const addedItem = state.dataItems.find(item => item.id === action.payload.itemId)
-            console.log(addedItem)
+            const addedItemNew = state.dataItems.find(item => item.id === action.payload.itemId)
+
             if (newItemAlreadyInCart) {
                 return [
                     ...state.cart.slice(0, newItemAlreadyInCartIndex),
                     {
-                        id: addedItem.id,
-                        title: addedItem.title,
+                        id: newItemAlreadyInCart.id,
+                        title: newItemAlreadyInCart.title,
                         count: newItemAlreadyInCart.count + action.payload.count
                     },
                     ...state.cart.slice(newItemAlreadyInCartIndex + 1)
@@ -33,8 +25,8 @@ export const updateCart = (state, action) => {
                 return [
                     ...state.cart,
                     {
-                        id: addedItem.id,
-                        title: addedItem.title,
+                        id: addedItemNew.id,
+                        title: addedItemNew.title,
                         count: action.payload.count
                     }
                 ]

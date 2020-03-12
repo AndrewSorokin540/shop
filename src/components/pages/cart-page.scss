@@ -2,7 +2,7 @@
     width: 100%;
 }
 .cart-table tr{
-    &:nth-child(odd){
+    &:nth-child(even){
         background-color: #aaaaaa45;
     }
     td:nth-child(1){
