@@ -26,3 +26,8 @@ export const openModal = (itemId) => ({
 export const closeModal = () => ({
     type: 'MODAL_CLOSE'
 })
+
+export const onSearch = (inputValue) => ({
+    type: 'ON_SEARCH',
+    payload: inputValue
+})

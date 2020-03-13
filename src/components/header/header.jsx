@@ -1,7 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './header.scss';
-import Logo from '../../img/logo.png'
+import Logo from '../../img/logo.png';
+import Search from '../search';
 
 const Header = () => {
     return (
@@ -25,6 +26,7 @@ const Header = () => {
                                 </li>
                             </ul>
                         </nav>
+                        <Search />
                     </div>
                 </div>
             </div>

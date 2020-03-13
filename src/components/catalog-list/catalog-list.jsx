@@ -12,7 +12,7 @@ class CatalogList extends React.Component {
     }
 
     render() {
-        if (!this.props.dataItems) {
+        if (!this.props.visibleItems) {
             return (
                 <div className="catalog">
                     <div className="row">
@@ -21,7 +21,7 @@ class CatalogList extends React.Component {
                 </div>
             )
         }
-        const list = this.props.dataItems.map(item => (
+        const list = this.props.visibleItems.map(item => (
             <div className="col-12 col-sm-6 col-md-4 catalog-item" key={item.id}>
                 <MiniCard {...item} minicardType={this.props.minicardType} />
             </div>
@@ -36,7 +36,7 @@ class CatalogList extends React.Component {
     }
 }
 
-const mapStateToProps = ({ dataItems }) => ({ dataItems })
+const mapStateToProps = ({ visibleItems }) => ({ visibleItems })
 
 const mapDispatchToProps = { dataLoaded }
 
