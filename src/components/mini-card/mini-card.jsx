@@ -12,7 +12,7 @@ const MiniCard = ({ id, title, ingredientsInRus, price, coverImage, openModal, m
                 <div className="mini-card__content">
                     <div className="mini-card__item-title">{title}</div>
                     <div className="mini-card__item-description">{ingredientsInRus}</div>
-                    <div className="mini-card__item-price"> от {price.s} руб.</div>
+                    <div className="mini-card__item-price"> от {price.sm} руб.</div>
                 </div>
                 <button className="button button-primary" onClick={() => openModal(id)}>Добавить в корзину</button>
             </div>

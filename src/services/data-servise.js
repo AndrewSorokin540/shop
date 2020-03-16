@@ -26,9 +26,9 @@ export default class DataService {
             id: 1,
             title: 'Фирменная',
             price: {
-                s: 280,
-                m: 360,
-                l: 480
+                sm: 280,
+                md: 360,
+                lg: 480
             },
             coverImage: img1,
             ingredientsInRus: 'Бекон, сервелат, корнишоны, маслины, лук фри, горчица дижонская, сыр Моцарелла, соус томатный'
@@ -37,9 +37,9 @@ export default class DataService {
             id: 2,
             title: 'Барбекю',
             price: {
-                s: 280,
-                m: 360,
-                l: 480
+                sm: 280,
+                md: 360,
+                lg: 480
             },
             coverImage: img2,
             ingredientsInRus: 'Филе цыпленка, ветчина, бекон, шампиньоны, сыр Моцарелла, соус BBQ'
@@ -48,9 +48,9 @@ export default class DataService {
             id: 3,
             title: 'Карбонара',
             price: {
-                s: 280,
-                m: 360,
-                l: 480
+                sm: 280,
+                md: 360,
+                lg: 480
             },
             coverImage: img3,
             ingredientsInRus: 'Бекон, томаты, сыры Пармезан и Моцарелла, соус чесночный'
@@ -59,9 +59,9 @@ export default class DataService {
             id: 4,
             title: 'Охотничья',
             price: {
-                s: 280,
-                m: 360,
-                l: 480
+                sm: 280,
+                md: 360,
+                lg: 480
             },
             coverImage: img4,
             ingredientsInRus: 'Колбаски Охотничьи, бекон, опята и лук маринованные, сыр Моцарелла, соус томатный'
@@ -70,9 +70,9 @@ export default class DataService {
             id: 5,
             title: 'Пепперони',
             price: {
-                s: 280,
-                m: 360,
-                l: 480
+                sm: 280,
+                md: 360,
+                lg: 480
             },
             coverImage: img5,
             ingredientsInRus: 'Пепперони, сыр Моцарелла, соус томатный'
@@ -81,9 +81,9 @@ export default class DataService {
             id: 6,
             title: 'Пепперони с двойным сыром',
             price: {
-                s: 280,
-                m: 360,
-                l: 480
+                sm: 280,
+                md: 360,
+                lg: 480
             },
             coverImage: img6,
             ingredientsInRus: 'Пепперони, сыр Моцарелла, соус томатный'
@@ -92,9 +92,9 @@ export default class DataService {
             id: 7,
             title: '6 сыров',
             price: {
-                s: 280,
-                m: 360,
-                l: 480
+                sm: 280,
+                md: 360,
+                lg: 480
             },
             coverImage: img7,
             ingredientsInRus: 'Пармезан, Дор-блю, Гауда, Чеддер оранжевый, творожный, Моцарелла'
@@ -103,9 +103,9 @@ export default class DataService {
             id: 8,
             title: 'Острая',
             price: {
-                s: 280,
-                m: 360,
-                l: 480
+                sm: 280,
+                md: 360,
+                lg: 480
             },
             coverImage: img8,
             ingredientsInRus: 'Филе цыпленка, перец халапеньо, сыр Моцарелла, маринованный лук, лечо, томатный соус'
@@ -114,9 +114,9 @@ export default class DataService {
             id: 9,
             title: 'Чикен рэнч',
             price: {
-                s: 280,
-                m: 360,
-                l: 480
+                sm: 280,
+                md: 360,
+                lg: 480
             },
             coverImage: img9,
             ingredientsInRus: 'Филе цыпленка, томаты, сыр Моцарелла, соус Ранч'
@@ -125,9 +125,9 @@ export default class DataService {
             id: 10,
             title: 'Мясная',
             price: {
-                s: 280,
-                m: 360,
-                l: 480
+                sm: 280,
+                md: 360,
+                lg: 480
             },
             coverImage: img10,
             ingredientsInRus: 'Филе цыпленка, бекон, сервелат, ветчина, колбаски Охотничьи, томаты, сыр Моцарелла , соус томатный'
@@ -136,9 +136,9 @@ export default class DataService {
             id: 11,
             title: 'С ветчиной и грибами',
             price: {
-                s: 280,
-                m: 360,
-                l: 480
+                sm: 280,
+                md: 360,
+                lg: 480
             },
             coverImage: img11,
             ingredientsInRus: 'Ветчина, шампиньоны, сыр Моцарелла, сыр Чеддер оранжевый, соус чесночный'
@@ -147,9 +147,9 @@ export default class DataService {
             id: 12,
             title: 'Гавайская',
             price: {
-                s: 280,
-                m: 360,
-                l: 480
+                sm: 280,
+                md: 360,
+                lg: 480
             },
             coverImage: img12,
             ingredientsInRus: 'Филе цыпленка, ветчина, ананас, сыр Моцарелла, соус розовый'
@@ -158,9 +158,9 @@ export default class DataService {
             id: 13,
             title: 'Барбекю микс',
             price: {
-                s: 280,
-                m: 360,
-                l: 480
+                sm: 280,
+                md: 360,
+                lg: 480
             },
             coverImage: img13,
             ingredientsInRus: 'Колбаски охотничьи, бекон, ветчина, корнишоны, маслины, сыр Моцарелла, лук маринованный, соусы чили, томатный и BBQ'
@@ -169,9 +169,9 @@ export default class DataService {
             id: 14,
             title: 'Грибная',
             price: {
-                s: 280,
-                m: 360,
-                l: 480
+                sm: 280,
+                md: 360,
+                lg: 480
             },
             coverImage: img14,
             ingredientsInRus: 'Ветчина, сервелат, шампиньоны, сыр Моцарелла, соус Ранч, итальянские травы'
@@ -180,9 +180,9 @@ export default class DataService {
             id: 15,
             title: 'Вегетарианская',
             price: {
-                s: 280,
-                m: 360,
-                l: 480
+                sm: 280,
+                md: 360,
+                lg: 480
             },
             coverImage: img15,
             ingredientsInRus: 'Сыр моцарелла, сыр Творожный, томаты, маслины, лечо, лук маринованный, соусы ранч, чесночный, масло острое'
@@ -191,9 +191,9 @@ export default class DataService {
             id: 16,
             title: 'Nutella',
             price: {
-                s: 280,
-                m: 360,
-                l: 480
+                sm: 280,
+                md: 360,
+                lg: 480
             },
             coverImage: img16,
             ingredientsInRus: 'Сыр творожный, сметана, персик, зефир Маршмеллоу, nutella'
@@ -205,7 +205,7 @@ export default class DataService {
             id: 17,
             title: 'Coca-Cola',
             price: {
-                s: 80
+                sm: 80
             },
             coverImage: imgCola
         },
@@ -213,7 +213,7 @@ export default class DataService {
             id: 18,
             title: 'Fanta',
             price: {
-                s: 80
+                sm: 80
             },
             coverImage: imgFanta
         },
@@ -221,7 +221,7 @@ export default class DataService {
             id: 19,
             title: 'Sprite',
             price: {
-                s: 80
+                sm: 80
             },
             coverImage: imgSprite
         }

@@ -15,6 +15,8 @@
         background-color: $brand-color;
         color: #fff;
         padding: 15px;
+        display: flex;
+        justify-content: space-between;
     }
     &__body{
         padding: 15px;
@@ -26,7 +28,6 @@
     }
     &__li{
         display: flex;
-        font-weight: 600;
         justify-content: space-between;
         align-items: center;
         &:not(:last-child){
@@ -35,8 +36,9 @@
     }
     &__item-title{
         min-width: 200px;
+        font-weight: 600;
     }
-    &__number{
+    &__number, &__item-size{
         color: $mid-grey;
         font-style: italic;
         font-size: calc(1em - 2px);
@@ -44,6 +46,17 @@
     }
     &__buttons{
         margin-left: 20px;
+
+        &-group{
+            display: flex;
+            button{
+                flex-grow: 1;
+            }
+            margin-bottom: .25em;
+        }
+        button{
+            padding: .25em 1em;
+        }
 
         button:not(:last-child){
             margin-right: 10px;

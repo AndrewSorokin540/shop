@@ -3,14 +3,14 @@ export const dataLoaded = (data) => ({
     payload: data
 })
 
-export const itemAddToCart = (itemId, count) => ({
+export const itemAddToCart = (itemId, count, size) => ({
     type: 'ITEM_ADD_TO_CART',
-    payload: { itemId, count }
+    payload: { itemId, count, size }
 })
 
-export const itemRemoveFromCart = (itemId) => ({
+export const itemRemoveFromCart = (itemId, size) => ({
     type: 'ITEM_REMOVE_FROM_CART',
-    payload: { itemId }
+    payload: { itemId, size }
 })
 
 export const allItemsRemoveFromCart = (itemId) => ({

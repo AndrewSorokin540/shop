@@ -31,13 +31,35 @@
         justify-content: space-between;
         align-items: center;
         font-size: 1.1em;
-        margin-bottom: 1em;
+        margin: 1em 0;
     }
     &__num-btn{
         border: none;
         background: none;
         width: 40px;
         cursor: pointer;
+    }
+    &__size-form{
+        display: flex;
+        justify-content: space-between;
+        input[type="radio"]{
+            display: none;
+            &:checked + label{
+                background-color: $brand-color;
+                color: $text-color-light;
+            }
+        }
+        label{
+            padding: .25em .5em;
+            flex-grow: 1;
+            cursor: pointer;
+            border: 1px solid transparent;
+            transition: border-color .2s;
+            text-align: center;
+            &:hover{
+                border-color: $brand-color;
+            }
+        }
     }
     &__button-to-cart{
         display: block;

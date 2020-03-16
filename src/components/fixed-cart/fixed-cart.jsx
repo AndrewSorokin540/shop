@@ -15,27 +15,58 @@ class FixedCart extends React.Component {
         })
     }
 
+    sizeName = (name) => {
+        switch (name) {
+            case 'sm':
+                return 'Маленькая'
+            case 'md':
+                return 'Средняя'
+            case 'lg':
+                return 'Большая'
+        }
+    }
+
     render() {
-        const list = this.props.cart.map((item, index) => (
+
+        // TODO: перенести в reducer
+        let totalPrice = 0;
+        for (let item of this.props.cart) {
+            totalPrice += item.total
+        }
+
+        console.log('Товары в корзине:', this.props.cart)
+        console.log('Общая стоимость корзины:', totalPrice)
+
+        const list = this.props.cart.map((item, index) => {
+            const { id, title, size, count, total } = item;
+            return (
             <li key={index} className='fixed-cart__li'>
                 <div>
-                    <div className="fixed-cart__item-title">{item.title}</div>
-                    <div className="fixed-cart__number">Кол-во: {item.count}</div>
+                    <div>
+                        <span className="fixed-cart__item-title">{title}</span>
+                        <span className="fixed-cart__item-size"> ({this.sizeName(size)})</span>
+                    </div>
+                    <div className="fixed-cart__number">Кол-во: {count}, сумма: {total}руб.</div>
                 </div>
                 <div className='fixed-cart__buttons'>
-                    <button className='button button-primary' onClick={() => this.props.itemRemoveFromCart(item.id)}>-</button>
-                    <button className='button button-primary' onClick={() => this.props.allItemsRemoveFromCart(item.id)}>---</button>
-                    <button className='button button-primary' onClick={() => this.props.itemAddToCart(item.id, 1)}>+</button>
+                    <div className='fixed-cart__buttons-group'>
+                        <button className='button button-primary' onClick={() => this.props.itemRemoveFromCart(id ,size)}>-</button>
+                        <button className='button button-primary' onClick={() => this.props.itemAddToCart(id, 1, size)}>+</button>
+                    </div>
+                    <button className='button button-primary' onClick={() => this.props.allItemsRemoveFromCart(id)}>Удалить всё</button>
                 </div>
             </li>
-        ))
+        )})
         const classNames = this.state.cartVisible ? "fixed-cart" : "fixed-cart fixed-cart--hidden"
         if (this.props.cart.length < 1) {
             return null
         }
         return (
             <div className={classNames}>
-                <div className="fixed-cart__header" onClick={() => this.toggle()}>Корзина</div>
+                <div className="fixed-cart__header" onClick={() => this.toggle()}>
+                    <span>Корзина</span>
+                    <span>Всего: {totalPrice} руб.</span>
+                </div>
                 <div className="fixed-cart__body">
                     <ul className='fixed-cart__ul'>
                         {list}

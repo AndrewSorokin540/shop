@@ -6,7 +6,8 @@ import './modal-order.scss';
 class ModalOrder extends React.Component {
 
     state = {
-        itemsNumber: 1
+        itemsNumber: 1,
+        size: 'sm'
     }
 
     increaseNumber() {
@@ -23,8 +24,14 @@ class ModalOrder extends React.Component {
         }
     }
 
+    handleOptionChange = (e) => {
+        this.setState({
+            size: e.target.value
+        })
+    }
+
     onAddItem() {
-        this.props.itemAddToCart(this.props.openedItemId, this.state.itemsNumber)
+        this.props.itemAddToCart(this.props.openedItemId, this.state.itemsNumber, this.state.size)
         this.props.closeModal()
     }
     
@@ -37,6 +44,27 @@ class ModalOrder extends React.Component {
                     <h2 className="modal-order__title">{title}</h2>
                     <div className="modal-order__details">25 см, традиционное тесто, 430г</div>
                     <p className="modal-order__ingridients">{ingredientsInRus}</p>
+                    <form className="modal-order__size-form">
+                        
+                        <input type="radio" name="size" value='sm' id='size-sm' 
+                        checked={this.state.size === 'sm'}
+                        onChange={this.handleOptionChange} />
+                        
+                        <label htmlFor="size-sm">Маленькая</label>
+                        
+                        <input type="radio" name="size" value='md' id='size-md' 
+                        checked={this.state.size === 'md'}
+                        onChange={this.handleOptionChange} />
+                        
+                        <label htmlFor="size-md">Средняя</label>
+                        
+                        <input type="radio" name="size" value='lg' id='size-lg' 
+                        checked={this.state.size === 'lg'}
+                        onChange={this.handleOptionChange} />
+                        
+                        <label htmlFor="size-lg">Большая</label>
+                    
+                    </form>
                     <div className='modal-order__number'>
                         Количество:
                         <div>
@@ -47,7 +75,7 @@ class ModalOrder extends React.Component {
                     </div>
                     <button className='modal-order__button-to-cart button button-primary'
                         onClick={() => this.onAddItem()}>
-                        В корзину за {price.s}р.
+                        В корзину за {price[this.state.size] * this.state.itemsNumber}р.
                     </button>
                 </div>
             </div>
