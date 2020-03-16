@@ -28,16 +28,9 @@ class FixedCart extends React.Component {
 
     render() {
 
-        // TODO: перенести в reducer
-        let totalPrice = 0;
-        for (let item of this.props.cart) {
-            totalPrice += item.total
-        }
+        console.log('Товары в корзине:', this.props.cart.order)
 
-        console.log('Товары в корзине:', this.props.cart)
-        console.log('Общая стоимость корзины:', totalPrice)
-
-        const list = this.props.cart.map((item, index) => {
+        const list = this.props.cart.order.map((item, index) => {
             const { id, title, size, count, total } = item;
             return (
             <li key={index} className='fixed-cart__li'>
@@ -58,14 +51,14 @@ class FixedCart extends React.Component {
             </li>
         )})
         const classNames = this.state.cartVisible ? "fixed-cart" : "fixed-cart fixed-cart--hidden"
-        if (this.props.cart.length < 1) {
+        if (this.props.cart.order.length < 1) {
             return null
         }
         return (
             <div className={classNames}>
                 <div className="fixed-cart__header" onClick={() => this.toggle()}>
                     <span>Корзина</span>
-                    <span>Всего: {totalPrice} руб.</span>
+                    <span>Всего: {this.props.cart.total} руб.</span>
                 </div>
                 <div className="fixed-cart__body">
                     <ul className='fixed-cart__ul'>

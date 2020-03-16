@@ -4,10 +4,10 @@ import { itemRemoveFromCart, allItemsRemoveFromCart, itemAddToCart } from '../..
 import './cart-page.scss';
 
 const CartPage = (props) => {
-    if (props.cart.length < 1) {
+    if (props.cart.order.length < 1) {
         return <h2>Корзина пуста</h2>
     }
-    const tableBody = props.cart.map((item, index) => {
+    const tableBody = props.cart.order.map((item, index) => {
         const { id, title, count, size } = item;
         return (
             <tr key={index}>
@@ -23,6 +23,10 @@ const CartPage = (props) => {
         <table className="cart-table">
             <tbody>
                 {tableBody}
+                <tr>
+                    <td colSpan='2'>Итого:</td>
+                    <td colSpan='3' className='text-center'>{props.cart.total} руб.</td>
+                </tr>
             </tbody>
         </table>
     );
