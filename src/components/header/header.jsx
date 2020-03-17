@@ -10,11 +10,14 @@ const Header = () => {
             <div className="header__fixed">
                 <div className="container header__content">
                     <div className="header__top">
-                        <img className='header__logo' src={Logo} alt="logo"/>
+                        <img className='header__logo' src={Logo} alt="logo" />
                     </div>
                     <div className="header__bottom">
                         <nav>
                             <ul className='header__nav-list'>
+                                <li>
+                                    <Link to='/'>Главная</Link>
+                                </li>
                                 <li>
                                     <Link to='/pizza'>Пицца</Link>
                                 </li>
