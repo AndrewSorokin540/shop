@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { itemRemoveFromCart, allItemsRemoveFromCart, itemAddToCart } from '../../actions';
 import './cart-page.scss';
+import OrderForm from '../order-form';
 
 const CartPage = (props) => {
     if (props.cart.order.length < 1) {
@@ -20,15 +21,19 @@ const CartPage = (props) => {
         )
     })
     return (
-        <table className="cart-table">
-            <tbody>
-                {tableBody}
-                <tr>
-                    <td colSpan='2'>Итого:</td>
-                    <td colSpan='3' className='text-center'>{props.cart.total} руб.</td>
-                </tr>
-            </tbody>
-        </table>
+        <React.Fragment>
+            <h2>Корзина</h2>
+            <table className="cart-table">
+                <tbody>
+                    {tableBody}
+                    <tr>
+                        <td colSpan='2'>Итого:</td>
+                        <td colSpan='3' className='text-center'>{props.cart.total} руб.</td>
+                    </tr>
+                </tbody>
+            </table>
+            <OrderForm />
+        </React.Fragment>
     );
 }
 

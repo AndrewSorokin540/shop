@@ -20,7 +20,7 @@ const sliderData = [
         textDescription: 'По понедельникам скидка на всю пиццу 50%!'
     },
     {
-        imgSrc: slide_1,
+        imgSrc: slide_3,
         textTitle: 'На массе!',
         textDescription: 'Заказывай у нас пиццу 30 дней подряд и получи в подарок годовой абонемент в тренажерный зал!'
     }
