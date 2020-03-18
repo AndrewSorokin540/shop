@@ -4,19 +4,23 @@ import { itemRemoveFromCart, allItemsRemoveFromCart, itemAddToCart } from '../..
 import './cart-page.scss';
 import OrderForm from '../order-form';
 
-const CartPage = (props) => {
-    if (props.cart.order.length < 1) {
+const CartPage = ({ cart, orderPlaced, itemRemoveFromCart, allItemsRemoveFromCart, itemAddToCart }) => {
+
+    if (orderPlaced) {
+        return <h2>Спасибо за заказ!</h2>
+    }
+    if (cart.order.length < 1) {
         return <h2>Корзина пуста</h2>
     }
-    const tableBody = props.cart.order.map((item, index) => {
+    const tableBody = cart.order.map((item, index) => {
         const { id, title, count, size } = item;
         return (
             <tr key={index}>
                 <td>{title}</td>
                 <td className='text-center'>{count}</td>
-                <td className='cart-table__td-button'><button className='button button-primary' onClick={() => props.itemRemoveFromCart(id, size)}>-</button></td>
-                <td className='cart-table__td-button'><button className='button button-primary' onClick={() => props.allItemsRemoveFromCart(id)}>Удалить все</button></td>
-                <td className='cart-table__td-button'><button className='button button-primary' onClick={() => props.itemAddToCart(id, 1, size)}>+</button></td>
+                <td className='cart-table__td-button'><button className='button button-primary' onClick={() => itemRemoveFromCart(id, size)}>-</button></td>
+                <td className='cart-table__td-button'><button className='button button-primary' onClick={() => allItemsRemoveFromCart(id)}>Удалить все</button></td>
+                <td className='cart-table__td-button'><button className='button button-primary' onClick={() => itemAddToCart(id, 1, size)}>+</button></td>
             </tr>
         )
     })
@@ -28,7 +32,7 @@ const CartPage = (props) => {
                     {tableBody}
                     <tr>
                         <td colSpan='2'>Итого:</td>
-                        <td colSpan='3' className='text-center'>{props.cart.total} руб.</td>
+                        <td colSpan='3' className='text-center'>{cart.total} руб.</td>
                     </tr>
                 </tbody>
             </table>
@@ -37,7 +41,7 @@ const CartPage = (props) => {
     );
 }
 
-const mapStateToProps = ({ cart }) => ({ cart })
+const mapStateToProps = ({ cart, placedOrder: {orderPlaced} }) => ({ cart, orderPlaced })
 
 const mapDispatchToProps = { itemRemoveFromCart, allItemsRemoveFromCart, itemAddToCart }
 

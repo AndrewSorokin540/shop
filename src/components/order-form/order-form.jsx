@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { placeOrder } from '../../actions';
 import './order-form.scss';
 
 export class OrderForm extends Component {
@@ -8,45 +10,39 @@ export class OrderForm extends Component {
         building: '',
         room: '',
         phoneNumber: '',
-        
-        orderPlaced: false,
-        submitedForm: {
-            submitedStreet: '',
-            submitedBuilding: '',
-            submitedRoom: '',
-            submitedPhoneNumber: '',
-        }
+        time: ''
     }
 
     handleStreetChange = ({ target: { value } }) => { this.setState({ street: value }) }
-
     handleBuildingChange = ({ target: { value } }) => { this.setState({ building: value }) }
-
     handleRoomChange = ({ target: { value } }) => { this.setState({ room: value }) }
-
     handlePhoneNumberChange = ({ target: { value } }) => { this.setState({ phoneNumber: value }) }
+    handleTimeNumberChange = ({ target: { value } }) => { this.setState({ time: value }) }
 
     onSubmit = (e) => {
         e.preventDefault();
-        const  { street, building, room, phoneNumber } = this.state;
-        console.log(`Заказ на адрес: ул.: ${street}, дом: ${building}, квартира: ${room}. Телефон: ${phoneNumber}`)
+        const { street, building, room, phoneNumber } = this.state;
+        const { placeOrder } = this.props;
+
+        placeOrder({
+            orderPlaced: true,
+            submitedStreet: street,
+            submitedBuilding: building,
+            submitedRoom: room,
+            submitedPhoneNumber: phoneNumber
+        })
+
         this.setState({
             street: '',
             building: '',
             room: '',
-            phoneNumber: '',
-            submitedForm: {
-                submitedStreet: street,
-                submitedBuilding: building,
-                submitedRoom: room,
-                submitedPhoneNumber: phoneNumber,
-            },
-            orderPlaced: true
+            phoneNumber: ''
         })
     }
+
     render() {
 
-        let { street, building, room, phoneNumber, orderPlaced } = this.state;
+        let { street, building, room, phoneNumber, time, orderPlaced } = this.state;
 
         if (orderPlaced) {
             return <h2 className='m-t-6 text-center'>Спасибо за заказ!</h2>
@@ -62,18 +58,19 @@ export class OrderForm extends Component {
 
                     <label className="form-group col-12 col-md-6 col-lg-3">
                         Дом:
-                        <input type='text' className='input-text' value={building} onChange={this.handleBuildingChange} />
+                        <input type='number' className='input-text' value={building} onChange={this.handleBuildingChange} />
                     </label>
 
                     <label className="form-group col-12 col-md-6 col-lg-3">
                         Квартира:
-                        <input type='text' className='input-text' value={room} onChange={this.handleRoomChange} />
+                        <input type='number' className='input-text' value={room} onChange={this.handleRoomChange} />
                     </label>
 
                     <label className="form-group col-12 col-md-6 col-lg-3">
                         Телефон:
-                        <input type='text' className='input-text' value={phoneNumber} onChange={this.handlePhoneNumberChange} />
+                        <input type='tel' className='input-text' value={phoneNumber} onChange={this.handlePhoneNumberChange} />
                     </label>
+
                     <div className="col-12 text-center m-t-1">
                         <button type='submit' className='button button-primary' onClick={this.onSubmit}>Заказать</button>
                     </div>
@@ -83,4 +80,6 @@ export class OrderForm extends Component {
     }
 }
 
-export default OrderForm;
+const mapDispatchToProps = ({ placeOrder })
+
+export default connect(null, mapDispatchToProps)(OrderForm);

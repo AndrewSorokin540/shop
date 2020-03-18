@@ -18,6 +18,11 @@ export const allItemsRemoveFromCart = (itemId) => ({
     payload: { itemId }
 })
 
+export const placeOrder = (orderDetails) => ({
+    type: 'ORDER_PLACED',
+    payload: orderDetails
+})
+
 export const openModal = (itemId) => ({
     type: 'MODAL_OPEN',
     payload: itemId

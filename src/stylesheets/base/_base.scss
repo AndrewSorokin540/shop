@@ -32,12 +32,3 @@ a {
     color: $brand-color;
   }
 }
-
-input[type='text']{
-  border-radius: 3px;
-  border: 1px solid $dark-grey;
-  padding: .35em .5em;
-}
-input:focus {
-  outline-color: $brand-color;
-}

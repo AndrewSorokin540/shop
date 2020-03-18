@@ -1,8 +1,13 @@
-.form-group{
-    display: flex;
-    flex-direction: column;
+.form-group {
+  display: flex;
+  flex-direction: column;
 }
 
-input.input-text{
-    
+input.input-text {
+  border-radius: 3px;
+  border: 1px solid $dark-grey;
+  padding: 0.35em 0.5em;
+}
+input:focus {
+  outline-color: $brand-color;
 }

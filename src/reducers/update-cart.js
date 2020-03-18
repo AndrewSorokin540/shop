@@ -51,7 +51,7 @@ export const updateCart = (state, action) => {
 
         case 'ITEM_REMOVE_FROM_CART':
             const removeItemIndex = state.cart.order.findIndex(item => item.id === action.payload.itemId && item.size === action.payload.size)
-            const removeItem = state.cart.order[removeItemIndex]            
+            const removeItem = state.cart.order[removeItemIndex]
             const { price, size, count } = removeItem;
             if (count > 1) {
                 return {
@@ -87,6 +87,13 @@ export const updateCart = (state, action) => {
                 ],
                 total: state.cart.total - removeItems.price[removeItems.size] * removeItems.count
             }
+
+        case 'ORDER_PLACED':
+            return {
+                order: [],
+                total: 0
+            };
+
         default:
             return state.cart;
     }
