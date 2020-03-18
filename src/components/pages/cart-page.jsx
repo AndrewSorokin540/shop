@@ -3,11 +3,12 @@ import { connect } from 'react-redux';
 import { itemRemoveFromCart, allItemsRemoveFromCart, itemAddToCart } from '../../actions';
 import './cart-page.scss';
 import OrderForm from '../order-form';
+import OrderSent from '../order-sent';
 
 const CartPage = ({ cart, orderPlaced, itemRemoveFromCart, allItemsRemoveFromCart, itemAddToCart }) => {
 
     if (orderPlaced) {
-        return <h2>Спасибо за заказ!</h2>
+        return <OrderSent />
     }
     if (cart.order.length < 1) {
         return <h2>Корзина пуста</h2>

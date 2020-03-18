@@ -41,11 +41,8 @@ export class OrderForm extends Component {
 
     render() {
 
-        let { street, building, room, phoneNumber, orderPlaced } = this.state;
+        let { street, building, room, phoneNumber } = this.state;
 
-        if (orderPlaced) {
-            return <h2 className='m-t-6 text-center'>Спасибо за заказ!</h2>
-        }
         return (
             <React.Fragment>
                 <h2 className='m-t-6'>Ваш адрес</h2>
