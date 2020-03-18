@@ -22,17 +22,18 @@ export const updateCart = (state, action) => {
                             count: newItemAlreadyInCart.count + action.payload.count,
                             price,
                             size,
-                            total: price[size] * (count + action.payload.count)
+                            total: price * (count + action.payload.count)
                         },
                         ...state.cart.order.slice(newItemAlreadyInCartIndex + 1)
                     ],
-                    total: state.cart.total + price[size] * action.payload.count
+                    total: state.cart.total + price * action.payload.count
                 }
             }
             else {
                 const addedItemNew = state.dataItems.find(item => item.id === action.payload.itemId)
-                const { id, title, price } = addedItemNew;
+                const { id, title, details } = addedItemNew;
                 const { count, size } = action.payload;
+                
                 return {
                     order: [
                         ...state.cart.order,
@@ -40,19 +41,19 @@ export const updateCart = (state, action) => {
                             id,
                             title,
                             count,
-                            price,
+                            price: details[size].price,
                             size,
-                            total: price[size] * count
+                            total: details[size].price * count
                         }
                     ],
-                    total: state.cart.total + price[size] * count
+                    total: state.cart.total + details[size].price * count
                 }
             }
 
         case 'ITEM_REMOVE_FROM_CART':
             const removeItemIndex = state.cart.order.findIndex(item => item.id === action.payload.itemId && item.size === action.payload.size)
             const removeItem = state.cart.order[removeItemIndex]
-            const { price, size, count } = removeItem;
+            const { price, count } = removeItem;
             if (count > 1) {
                 return {
                     order: [
@@ -60,11 +61,11 @@ export const updateCart = (state, action) => {
                         {
                             ...removeItem,
                             count: count - 1,
-                            total: removeItem.total - removeItem.price[action.payload.size]
+                            total: removeItem.total - price
                         },
                         ...state.cart.order.slice(removeItemIndex + 1)
                     ],
-                    total: state.cart.total - price[size]
+                    total: state.cart.total - price
                 }
             }
             else {
@@ -73,19 +74,20 @@ export const updateCart = (state, action) => {
                         ...state.cart.order.slice(0, removeItemIndex),
                         ...state.cart.order.slice(removeItemIndex + 1)
                     ],
-                    total: state.cart.total - price[size]
+                    total: state.cart.total - price
                 }
             }
 
         case 'ALL_ITEMS_REMOVE_FROM_CART':
-            const removeItemsIndex = state.cart.order.findIndex(item => item.id === action.payload.itemId);
+            const removeItemsIndex = state.cart.order.findIndex(item => item.id === action.payload.itemId && item.size === action.payload.size);
             const removeItems = state.cart.order[removeItemsIndex]
+            console.log(removeItemsIndex)
             return {
                 order: [
                     ...state.cart.order.slice(0, removeItemsIndex),
                     ...state.cart.order.slice(removeItemsIndex + 1)
                 ],
-                total: state.cart.total - removeItems.price[removeItems.size] * removeItems.count
+                total: state.cart.total - removeItems.price * removeItems.count
             }
 
         case 'ORDER_PLACED':

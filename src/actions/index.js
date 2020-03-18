@@ -13,9 +13,9 @@ export const itemRemoveFromCart = (itemId, size) => ({
     payload: { itemId, size }
 })
 
-export const allItemsRemoveFromCart = (itemId) => ({
+export const allItemsRemoveFromCart = (itemId, size) => ({
     type: 'ALL_ITEMS_REMOVE_FROM_CART',
-    payload: { itemId }
+    payload: { itemId, size }
 })
 
 export const placeOrder = (orderDetails) => ({

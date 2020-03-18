@@ -9,8 +9,7 @@ export class OrderForm extends Component {
         street: '',
         building: '',
         room: '',
-        phoneNumber: '',
-        time: ''
+        phoneNumber: ''
     }
 
     handleStreetChange = ({ target: { value } }) => { this.setState({ street: value }) }
@@ -42,7 +41,7 @@ export class OrderForm extends Component {
 
     render() {
 
-        let { street, building, room, phoneNumber, time, orderPlaced } = this.state;
+        let { street, building, room, phoneNumber, orderPlaced } = this.state;
 
         if (orderPlaced) {
             return <h2 className='m-t-6 text-center'>Спасибо за заказ!</h2>

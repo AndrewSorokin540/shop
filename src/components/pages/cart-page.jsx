@@ -19,7 +19,7 @@ const CartPage = ({ cart, orderPlaced, itemRemoveFromCart, allItemsRemoveFromCar
                 <td>{title}</td>
                 <td className='text-center'>{count}</td>
                 <td className='cart-table__td-button'><button className='button button-primary' onClick={() => itemRemoveFromCart(id, size)}>-</button></td>
-                <td className='cart-table__td-button'><button className='button button-primary' onClick={() => allItemsRemoveFromCart(id)}>Удалить все</button></td>
+                <td className='cart-table__td-button'><button className='button button-primary' onClick={() => allItemsRemoveFromCart(id, size)}>Удалить все</button></td>
                 <td className='cart-table__td-button'><button className='button button-primary' onClick={() => itemAddToCart(id, 1, size)}>+</button></td>
             </tr>
         )
