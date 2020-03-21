@@ -46,25 +46,25 @@ export class OrderForm extends Component {
         return (
             <React.Fragment>
                 <h2 className='m-t-6'>Ваш адрес</h2>
-                <form className='order-form row'>
+                <form action='telegram.php' method='POST' className='order-form row'>
                     <label className="form-group col-12 col-md-6 col-lg-3">
                         Улица:
-                        <input type='text' className='input-text' value={street} onChange={this.handleStreetChange} />
+                        <input name='street' type='text' className='input-text' value={street} onChange={this.handleStreetChange} />
                     </label>
 
                     <label className="form-group col-12 col-md-6 col-lg-3">
                         Дом:
-                        <input type='number' className='input-text' value={building} onChange={this.handleBuildingChange} />
+                        <input name='building' type='text' className='input-text' value={building} onChange={this.handleBuildingChange} />
                     </label>
 
                     <label className="form-group col-12 col-md-6 col-lg-3">
                         Квартира:
-                        <input type='number' className='input-text' value={room} onChange={this.handleRoomChange} />
+                        <input name='room' type='number' className='input-text' value={room} onChange={this.handleRoomChange} />
                     </label>
 
                     <label className="form-group col-12 col-md-6 col-lg-3">
                         Телефон:
-                        <input type='tel' className='input-text' value={phoneNumber} onChange={this.handlePhoneNumberChange} />
+                        <input name='phone' type='tel' className='input-text' value={phoneNumber} onChange={this.handlePhoneNumberChange} />
                     </label>
 
                     <div className="col-12 text-center m-t-1">

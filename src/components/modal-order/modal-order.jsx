@@ -50,19 +50,14 @@ class ModalOrder extends React.Component {
     }
 
     render() {
-        const { title, details, weight, coverImage, ingredientsInRus, } = this.props.dataItems.find(item => item.id === this.props.openedItemId)
+        const { title, details, coverImage, ingredientsInRus } = this.props.dataItems.find(item => item.id === this.props.openedItemId)
         const { sizeName, itemsNumber } = this.state;
-
-        //const radioInputs = 
-
-        console.log(this.props.dataItems)
-
         return (
             <div className='modal-order'>
                 <div className="modal-order__img" style={{ backgroundImage: `url(${coverImage})` }} />
                 <div className="modal-order__content">
                     <h2 className="modal-order__title">{title}</h2>
-                    <div className="modal-order__details">{this.mapSizeNameToSize(sizeName)} см{details[sizeName] && `, ${details[sizeName].weight} г.`}</div>
+                    <div className="modal-order__details">{this.mapSizeNameToSize(sizeName)} см{details[sizeName] && `, ${details[sizeName].weight}`}</div>
                     <p className="modal-order__ingridients">{ingredientsInRus}</p>
                     <form className="modal-order__size-form">
 

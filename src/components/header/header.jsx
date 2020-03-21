@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Route } from 'react-router-dom';
 import './header.scss';
 import Logo from '../../img/logo.png';
 import Search from '../search';
@@ -29,7 +29,7 @@ const Header = () => {
                                 </li>
                             </ul>
                         </nav>
-                        <Search />
+                        <Route path='/(pizza|drinks)' component={Search} />
                     </div>
                 </div>
             </div>

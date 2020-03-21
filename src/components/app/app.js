@@ -23,14 +23,12 @@ const App = () => {
                     <main>
                         <DataProvider value={dataServise}>
                             <div className="container">
-                                <Switch>
-                                    <Route path='/' exact component={HomePage} />
-                                    <Route path='/pizza' component={PizzaPage} />
-                                    <Route path='/drinks' component={DrinksPage} />
-                                    <Route path='/cart' component={CartPage} />
-                                </Switch>
+                                <Route path='/' exact component={HomePage} />
+                                <Route path='/pizza' component={PizzaPage} />
+                                <Route path='/drinks' component={DrinksPage} />
+                                <Route path='/cart' component={CartPage} />
+                                <Route path='/(pizza|drinks|)' component={FixedCart} />
                             </div>
-                            <FixedCart />
                         </DataProvider>
                     </main>
                 </BrowserRouter>

@@ -13,7 +13,6 @@ import img12 from '../img/pizza/12.png';
 import img13 from '../img/pizza/13.png';
 import img14 from '../img/pizza/14.png';
 import img15 from '../img/pizza/15.png';
-import img16 from '../img/pizza/16.png';
 
 import imgCola from '../img/drinks/cola.png';
 import imgFanta from '../img/drinks/fanta.png';
@@ -28,15 +27,15 @@ export default class DataService {
             details: {
                 sm: {
                     price: 330,
-                    weight: 360
+                    weight: '360 гр.'
                 },
                 md: {
                     price: 420,
-                    weight: 470
+                    weight: '470 гр.'
                 },
                 lg: {
                     price: 650,
-                    weight: 720
+                    weight: '720 гр.'
                 }
             },
             coverImage: img1,
@@ -48,15 +47,15 @@ export default class DataService {
             details: {
                 sm: {
                     price: 330,
-                    weight: 360
+                    weight: '360 гр.'
                 },
                 md: {
                     price: 420,
-                    weight: 470
+                    weight: '470 гр.'
                 },
                 lg: {
                     price: 650,
-                    weight: 720
+                    weight: '720 гр.'
                 }
             },
             coverImage: img2,
@@ -68,15 +67,15 @@ export default class DataService {
             details: {
                 sm: {
                     price: 330,
-                    weight: 360
+                    weight: '360 гр.'
                 },
                 md: {
                     price: 420,
-                    weight: 470
+                    weight: '470 гр.'
                 },
                 lg: {
                     price: 650,
-                    weight: 720
+                    weight: '720 гр.'
                 }
             },
             coverImage: img3,
@@ -88,15 +87,15 @@ export default class DataService {
             details: {
                 sm: {
                     price: 330,
-                    weight: 360
+                    weight: '360 гр.'
                 },
                 md: {
                     price: 420,
-                    weight: 470
+                    weight: '470 гр.'
                 },
                 lg: {
                     price: 650,
-                    weight: 720
+                    weight: '720 гр.'
                 }
             },
             coverImage: img4,
@@ -108,15 +107,15 @@ export default class DataService {
             details: {
                 sm: {
                     price: 330,
-                    weight: 360
+                    weight: '360 гр.'
                 },
                 md: {
                     price: 420,
-                    weight: 470
+                    weight: '470 гр.'
                 },
                 lg: {
                     price: 650,
-                    weight: 720
+                    weight: '720 гр.'
                 }
             },
             coverImage: img5,
@@ -128,15 +127,15 @@ export default class DataService {
             details: {
                 sm: {
                     price: 330,
-                    weight: 360
+                    weight: '360 гр.'
                 },
                 md: {
                     price: 420,
-                    weight: 470
+                    weight: '470 гр.'
                 },
                 lg: {
                     price: 650,
-                    weight: 720
+                    weight: '720 гр.'
                 }
             },
             coverImage: img6,
@@ -148,15 +147,15 @@ export default class DataService {
             details: {
                 sm: {
                     price: 330,
-                    weight: 360
+                    weight: '360 гр.'
                 },
                 md: {
                     price: 420,
-                    weight: 470
+                    weight: '470 гр.'
                 },
                 lg: {
                     price: 650,
-                    weight: 720
+                    weight: '720 гр.'
                 }
             },
             coverImage: img7,
@@ -168,15 +167,15 @@ export default class DataService {
             details: {
                 sm: {
                     price: 330,
-                    weight: 360
+                    weight: '360 гр.'
                 },
                 md: {
                     price: 420,
-                    weight: 470
+                    weight: '470 гр.'
                 },
                 lg: {
                     price: 650,
-                    weight: 720
+                    weight: '720 гр.'
                 }
             },
             coverImage: img8,
@@ -188,15 +187,15 @@ export default class DataService {
             details: {
                 sm: {
                     price: 330,
-                    weight: 360
+                    weight: '360 гр.'
                 },
                 md: {
                     price: 420,
-                    weight: 470
+                    weight: '470 гр.'
                 },
                 lg: {
                     price: 650,
-                    weight: 720
+                    weight: '720 гр.'
                 }
             },
             coverImage: img9,
@@ -208,15 +207,15 @@ export default class DataService {
             details: {
                 sm: {
                     price: 330,
-                    weight: 360
+                    weight: '360 гр.'
                 },
                 md: {
                     price: 420,
-                    weight: 470
+                    weight: '470 гр.'
                 },
                 lg: {
                     price: 650,
-                    weight: 720
+                    weight: '720 гр.'
                 }
             },
             coverImage: img10,
@@ -228,15 +227,15 @@ export default class DataService {
             details: {
                 sm: {
                     price: 330,
-                    weight: 360
+                    weight: '360 гр.'
                 },
                 md: {
                     price: 420,
-                    weight: 470
+                    weight: '470 гр.'
                 },
                 lg: {
                     price: 650,
-                    weight: 720
+                    weight: '720 гр.'
                 }
             },
             coverImage: img11,
@@ -248,15 +247,15 @@ export default class DataService {
             details: {
                 sm: {
                     price: 330,
-                    weight: 360
+                    weight: '360 гр.'
                 },
                 md: {
                     price: 420,
-                    weight: 470
+                    weight: '470 гр.'
                 },
                 lg: {
                     price: 650,
-                    weight: 720
+                    weight: '720 гр.'
                 }
             },
             coverImage: img12,
@@ -268,15 +267,15 @@ export default class DataService {
             details: {
                 sm: {
                     price: 330,
-                    weight: 360
+                    weight: '360 гр.'
                 },
                 md: {
                     price: 420,
-                    weight: 470
+                    weight: '470 гр.'
                 },
                 lg: {
                     price: 650,
-                    weight: 720
+                    weight: '720 гр.'
                 }
             },
             coverImage: img13,
@@ -288,15 +287,15 @@ export default class DataService {
             details: {
                 sm: {
                     price: 330,
-                    weight: 360
+                    weight: '360 гр.'
                 },
                 md: {
                     price: 420,
-                    weight: 470
+                    weight: '470 гр.'
                 },
                 lg: {
                     price: 650,
-                    weight: 720
+                    weight: '720 гр.'
                 }
             },
             coverImage: img14,
@@ -308,15 +307,15 @@ export default class DataService {
             details: {
                 sm: {
                     price: 330,
-                    weight: 360
+                    weight: '360 гр.'
                 },
                 md: {
                     price: 420,
-                    weight: 470
+                    weight: '470 гр.'
                 },
                 lg: {
                     price: 650,
-                    weight: 720
+                    weight: '720 гр.'
                 }
             },
             coverImage: img15,
@@ -331,11 +330,15 @@ export default class DataService {
             details: {
                 sm: {
                     price: 80,
-                    weight: 0.5
+                    weight: '0.5 л'
                 },
                 md: {
-                    price: 420,
-                    weight: 1
+                    price: 100,
+                    weight: '1 л'
+                },
+                lg: {
+                    price: 120,
+                    weight: '1 л'
                 }
             },
             coverImage: imgCola
@@ -346,11 +349,15 @@ export default class DataService {
             details: {
                 sm: {
                     price: 80,
-                    weight: 0.5
+                    weight: '0.5 л'
                 },
                 md: {
-                    price: 420,
-                    weight: 1
+                    price: 100,
+                    weight: '1 л'
+                },
+                lg: {
+                    price: 120,
+                    weight: '1 л'
                 }
             },
             coverImage: imgFanta
@@ -360,12 +367,16 @@ export default class DataService {
             title: 'Sprite',
             details: {
                 sm: {
-                    price: 80,
+                    price: '0.5 л',
                     weight: 0.5
                 },
                 md: {
-                    price: 420,
-                    weight: 1
+                    price: 100,
+                    weight: '1 л'
+                },
+                lg: {
+                    price: 120,
+                    weight: '1 л'
                 }
             },
             coverImage: imgSprite
