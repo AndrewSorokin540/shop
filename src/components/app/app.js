@@ -1,7 +1,7 @@
 import React from 'react';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { BrowserRouter, Route } from 'react-router-dom';
 import Header from '../header';
-import { PizzaPage, DrinksPage, CartPage, HomePage } from '../pages';
+import { CartPage, HomePage } from '../pages';
 import { DataProvider } from '../data-service-context';
 import DataService from '../../services/data-servise';
 import { Provider } from 'react-redux';
@@ -24,8 +24,6 @@ const App = () => {
                         <DataProvider value={dataServise}>
                             <div className="container">
                                 <Route path='/' exact component={HomePage} />
-                                <Route path='/pizza' component={PizzaPage} />
-                                <Route path='/drinks' component={DrinksPage} />
                                 <Route path='/cart' component={CartPage} />
                                 <Route path='/(pizza|drinks|)' component={FixedCart} />
                             </div>

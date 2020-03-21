@@ -1,43 +1,32 @@
 import React from 'react';
 import MiniCard from '../mini-card';
-import { connect } from 'react-redux';
-import { dataLoaded } from '../../actions';
 import './catalog-list.scss';
 
-class CatalogList extends React.Component {
-
-    componentDidMount() {
-        this.props.getData()
-            .then(data => this.props.dataLoaded(data))
-    }
-
-    render() {
-        if (!this.props.visibleItems) {
-            return (
-                <div className="catalog">
-                    <div className="row">
-                        Loading...
-                    </div>
-                </div>
-            )
-        }
-        const list = this.props.visibleItems.map(item => (
-            <div className="col-12 col-sm-6 col-md-4 catalog-item" key={item.id}>
-                <MiniCard {...item} minicardType={this.props.minicardType} />
+const CatalogListView = ({data, minicardType}) => {
+    return (
+        <div className="catalog">
+            <div className="row">
+                {
+                    data.map(item => (
+                        <div className="col-12 col-sm-6 col-md-4 catalog-item" key={item.id}>
+                            <MiniCard {...item} minicardType={minicardType} />
+                        </div>
+                    ))
+                }
             </div>
-        ))
-        return (
-            <div className="catalog">
-                <div className="row">
-                    {list}
-                </div>
-            </div>
-        );
-    }
+        </div>
+    )
 }
 
-const mapStateToProps = ({ visibleItems }) => ({ visibleItems })
+const CatalogList = ({data, minicardType}) => {
 
-const mapDispatchToProps = { dataLoaded }
+    if (!data) {
+        return <CatalogListView data={[]} minicardType={minicardType} />
+    }
 
-export default connect(mapStateToProps, mapDispatchToProps)(CatalogList);
+    return (
+        <CatalogListView data={data} minicardType={minicardType} />
+    )
+}
+
+export default CatalogList;

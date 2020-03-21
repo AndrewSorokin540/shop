@@ -19,17 +19,17 @@ const Header = () => {
                                     <Link to='/'>Главная</Link>
                                 </li>
                                 <li>
-                                    <Link to='/pizza'>Пицца</Link>
+                                    <a href="#">Пицца</a>
                                 </li>
                                 <li>
-                                    <Link to='/drinks'>Напитки</Link>
+                                    <a href="#">Напитки</a>
                                 </li>
                                 <li>
                                     <Link to='/cart'>Корзина</Link>
                                 </li>
                             </ul>
                         </nav>
-                        <Route path='/(pizza|drinks)' component={Search} />
+                        <Route path='/' component={Search} />
                     </div>
                 </div>
             </div>

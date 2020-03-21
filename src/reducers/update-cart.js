@@ -30,7 +30,9 @@ export const updateCart = (state, action) => {
                 }
             }
             else {
-                const addedItemNew = state.dataItems.find(item => item.id === action.payload.itemId)
+                // ToDo: решить проблему с разделенным массивом dataItems
+                const totalDataItems = [...state.dataItems.pizza, ...state.dataItems.drinks]
+                const addedItemNew = totalDataItems.find(item => item.id === action.payload.itemId)
                 const { id, title, details } = addedItemNew;
                 const { count, size } = action.payload;
                 

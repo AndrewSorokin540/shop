@@ -50,7 +50,11 @@ class ModalOrder extends React.Component {
     }
 
     render() {
-        const { title, details, coverImage, ingredientsInRus } = this.props.dataItems.find(item => item.id === this.props.openedItemId)
+
+        // ToDo: решить проблему с разделенным массивом dataItems
+        const totalDataItems = [...this.props.dataItems.pizza, ...this.props.dataItems.drinks];
+
+        const { title, details, coverImage, ingredientsInRus } = totalDataItems.find(item => item.id === this.props.openedItemId)
         const { sizeName, itemsNumber } = this.state;
         return (
             <div className='modal-order'>
