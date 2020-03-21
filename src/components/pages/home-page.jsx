@@ -1,6 +1,9 @@
 import React from 'react';
-import SimpleSlider from '../slider';
+import DiscountsSlider from '../discounts-slider';
 
-const HomePage = () => <SimpleSlider />
+const HomePage = () => (
+    <DiscountsSlider />
+)
+
 
 export default HomePage;
