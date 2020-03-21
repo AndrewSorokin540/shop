@@ -1,5 +1,5 @@
 import React from "react";
-import SlickSlider from "../../containers/slick-slider";
+import SlickSlider from "../slick-slider";
 import './discounts-slider.scss';
 
 import img_1 from '../../img/slides/1.jpeg';
