@@ -27,7 +27,7 @@ const sliderData = [
 const slides = sliderData.map(slide => {
     return (
         <div className='pizza-slide'>
-            <img className='pizza-slide__img' src={slide.imgSrc} alt="pizza slide" />
+            <div className='pizza-slide__img' style={{ backgroundImage: `url(${slide.imgSrc})` }} />
             <div className='pizza-slide__text'>
                 <h2 className='pizza-slide__text-title'>{slide.textTitle}</h2>
                 <p className='pizza-slide__text-description'>{slide.textDescription}</p>
@@ -41,7 +41,9 @@ const settings = {
     infinite: true,
     speed: 500,
     slidesToShow: 1,
-    slidesToScroll: 1
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 5000
 };
 
 const DiscountsSlider = () => SlickSlider(settings, slides, 'Акции')

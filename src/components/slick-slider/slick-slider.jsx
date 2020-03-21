@@ -5,7 +5,7 @@ import "slick-carousel/slick/slick-theme.css";
 
 const SlickSlider = (settings, slides, title) => {
     return (
-        <div>
+        <div className='m-b-3'>
             <h2>{title}:</h2>
             <Slider {...settings}>
                 {slides}

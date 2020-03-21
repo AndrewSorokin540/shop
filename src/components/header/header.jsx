@@ -2,7 +2,6 @@ import React from 'react';
 import { Link, Route } from 'react-router-dom';
 import './header.scss';
 import Logo from '../../img/logo.png';
-import Search from '../search';
 
 const Header = () => {
     return (
@@ -29,7 +28,6 @@ const Header = () => {
                                 </li>
                             </ul>
                         </nav>
-                        <Route path='/' component={Search} />
                     </div>
                 </div>
             </div>

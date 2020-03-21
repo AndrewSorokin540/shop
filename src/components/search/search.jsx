@@ -6,7 +6,9 @@ import './search.scss';
 
 const Search = ({ onSearch }) => {
     return (
-        <input className='search-input' type="search" placeholder='Найти продукт из списка' onChange={(e) => onSearch(e.target.value)} />
+        <div className='search m-b-1 m-t-1'>
+            <input className='search-input' type="search" placeholder='Найти продукт из списка' onChange={(e) => onSearch(e.target.value)} />
+        </div>
     );
 }
 

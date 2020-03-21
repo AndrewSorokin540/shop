@@ -1,13 +1,22 @@
 .pizza-slide{
     height: 400px;
     display: inline-flex !important;
+    flex-direction: column;
+    position: relative;
 
     &__img{
         height: 100%;
-        flex: 0 0 50%;
+        background-position: center;
+        background-size: cover;
     }
 
     &__text{
+        position: absolute;
         padding: 0 0 0 2em;
+        bottom: 0;
+        width: 100%;
+        left: 0;
+        color: #fff;
+        background-color: rgba(0,0,0,.5);
     }
 }
