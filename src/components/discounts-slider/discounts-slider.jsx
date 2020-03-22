@@ -24,9 +24,9 @@ const sliderData = [
     }
 ]
 
-const slides = sliderData.map(slide => {
+const slides = sliderData.map((slide, index) => {
     return (
-        <div className='pizza-slide'>
+        <div className='pizza-slide' key={index}>
             <div className='pizza-slide__img' style={{ backgroundImage: `url(${slide.imgSrc})` }} />
             <div className='pizza-slide__text'>
                 <h2 className='pizza-slide__text-title'>{slide.textTitle}</h2>
