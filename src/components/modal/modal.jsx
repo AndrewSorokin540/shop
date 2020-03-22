@@ -1,12 +1,16 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { closeModal } from '../../actions';
+import ModalOrder from '../modal-order';
+import OrderSent from '../order-sent';
 import './modal.scss';
 
 class Modal extends React.Component {
-
+    
     render() {
-        if (!this.props.isModalOpen) {
+        const {isModalOpen, modalOpenType} = this.props;
+
+        if (!isModalOpen) {
             return null
         }
         return (
@@ -16,7 +20,8 @@ class Modal extends React.Component {
                         <button className='modal-close' onClick={this.props.closeModal}>&times;</button>
                     </div>
                     <div className="modal-body">
-                        {this.props.children}
+                        {modalOpenType === 'product-modal' && <ModalOrder />}
+                        {modalOpenType === 'thanks-modal' && <OrderSent /> }
                     </div>
                 </div>
             </div>
@@ -24,7 +29,7 @@ class Modal extends React.Component {
     }
 }
 
-const mapStateToProps = ({ modal: { isModalOpen } }) => ({ isModalOpen })
+const mapStateToProps = ({ modal: { isModalOpen, modalOpenType } }) => ({ isModalOpen, modalOpenType })
 
 const mapDispatchToProps = { closeModal }
 

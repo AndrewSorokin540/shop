@@ -1,9 +1,9 @@
 import React from 'react';
 import './mini-card.scss';
 import { connect } from 'react-redux';
-import { openModal } from '../../actions';
+import { openModalProduct } from '../../actions';
 
-const MiniCard = ({ id, title, ingredientsInRus, details: {sm: {price}}, coverImage, openModal, minicardType }) => {
+const MiniCard = ({ id, title, ingredientsInRus, details: {sm: {price}}, coverImage, openModalProduct, minicardType }) => {
     const classes = `mini-card ${minicardType === 'cuttingBoard' ? 'cutting-board' : ''}`
     return (
         <div className={classes}>
@@ -14,12 +14,12 @@ const MiniCard = ({ id, title, ingredientsInRus, details: {sm: {price}}, coverIm
                     <div className="mini-card__item-description">{ingredientsInRus}</div>
                     <div className="mini-card__item-price"> от {price} руб.</div>
                 </div>
-                <button className="button button-primary" onClick={() => openModal(id)}>Добавить в корзину</button>
+                <button className="button button-primary" onClick={() => openModalProduct(id)}>Добавить в корзину</button>
             </div>
         </div>
     );
 }
 
-const mapDispatchToProps = { openModal }
+const mapDispatchToProps = { openModalProduct }
 
 export default connect(null, mapDispatchToProps)(MiniCard);

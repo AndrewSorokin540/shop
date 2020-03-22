@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { placeOrder } from '../../actions';
+import { placeOrder, openModalThanks } from '../../actions';
 import './order-form.scss';
 
 
@@ -83,11 +83,9 @@ export class OrderForm extends Component {
 
     renderInputs = () => {
         let focusedElement = document.activeElement;
-        console.log(focusedElement)
         return Object.keys(this.state.formControls).map((controlName, index) => {
             const control = this.state.formControls[controlName]
             const controlIsFocused = focusedElement.name === control.name;
-            console.log('focusedElement',focusedElement.name)
             return (
                 <label key={index} className="col-12 col-md-6 col-lg-3 m-b-1 form-group">
                     {control.label}
@@ -96,9 +94,6 @@ export class OrderForm extends Component {
                         type={control.type}
                         className='input-text'
                         value={control.value}
-                        valid={control.valid}
-                        errorMessage={control.errorMessage}
-                        touched={control.touched}
                         placeholder={control.placeholder}
                         onChange={e => this.handleInputChange(e)}
                     />
@@ -134,8 +129,6 @@ export class OrderForm extends Component {
                 value: [e.target.value]
             }
         }
-        console.log(newFormControls[e.target.name].valid)
-        console.log(e.target)
         this.setState({
             formControls: newFormControls
         })
@@ -146,13 +139,15 @@ export class OrderForm extends Component {
         const { street, building, room, phoneNumber } = this.state;
         const { placeOrder } = this.props;
 
-        placeOrder({
-            orderPlaced: true,
-            submitedStreet: street,
-            submitedBuilding: building,
-            submitedRoom: room,
-            submitedPhoneNumber: phoneNumber
-        })
+        // placeOrder({
+        //     orderPlaced: true,
+        //     submitedStreet: street,
+        //     submitedBuilding: building,
+        //     submitedRoom: room,
+        //     submitedPhoneNumber: phoneNumber
+        // })
+
+        this.props.openModalThanks()
 
         this.setState({
             street: '',
@@ -179,6 +174,6 @@ export class OrderForm extends Component {
     }
 }
 
-const mapDispatchToProps = ({ placeOrder })
+const mapDispatchToProps = ({ placeOrder, openModalThanks })
 
 export default connect(null, mapDispatchToProps)(OrderForm);

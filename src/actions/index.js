@@ -23,9 +23,17 @@ export const placeOrder = (orderDetails) => ({
     payload: orderDetails
 })
 
-export const openModal = (itemId) => ({
-    type: 'MODAL_OPEN',
+export const openModalProduct = (itemId) => ({
+    type: 'MODAL_PRODUCT_OPEN',
     payload: itemId
+})
+
+export const openModalThanks = () => ({
+    type: 'MODAL_THANKS_OPEN',
+})
+
+export const orderSent = () => ({
+    type: 'ORDER_SENT',
 })
 
 export const closeModal = () => ({

@@ -17,6 +17,10 @@ export const updatePlacedOrder = (state, action) => {
                 placedOrder: action.payload
             })
 
+        case 'ORDER_SENT':
+            return ({
+                orderPlaced: false,
+            })
         default:
             return state.placedOrder;
     }

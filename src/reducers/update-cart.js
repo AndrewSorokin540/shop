@@ -8,6 +8,11 @@ export const updateCart = (state, action) => {
     }
 
     switch (action.type) {
+        case 'ORDER_SENT':
+            return {
+                order: [],
+                total: 0
+            }
         case 'ITEM_ADD_TO_CART':
             const newItemAlreadyInCartIndex = state.cart.order.findIndex(item => item.id === action.payload.itemId && item.size === action.payload.size);
             const newItemAlreadyInCart = state.cart.order[newItemAlreadyInCartIndex]
