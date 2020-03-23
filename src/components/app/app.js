@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Route } from 'react-router-dom';
+import { Switch, BrowserRouter, Route } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import { DataProvider } from '../data-service-context';
 import { CartPage, HomePage } from '../pages';
@@ -21,9 +21,11 @@ const App = () => (
                 <main>
                     <DataProvider value={dataServise}>
                         <div className="container">
-                            <Route path='(/|)' exact component={HomePage} />
-                            <Route path='/cart' component={CartPage} />
-                            <Route path='(/|)' component={FixedCart} />
+                            <Switch>
+                                <Route path='(/|)' exact component={HomePage} />
+                                <Route path='/cart' component={CartPage} />
+                                <Route path='(/|)' component={FixedCart} />
+                            </Switch>
                         </div>
                     </DataProvider>
                 </main>
