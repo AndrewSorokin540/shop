@@ -19,6 +19,7 @@
     @media screen and (max-width: 767px){
         padding: 15px;
         width: calc(100% - 20px);
+        max-width: 400px;
     }
 }
 .modal-close{

@@ -61,6 +61,10 @@
         font-style: italic;
         font-size: calc(1em - 2px);
         font-weight: lighter;
+        @media screen and (max-width: 767px) {
+            font-size: 1em;
+            font-weight: normal;
+        }
     }
     &__buttons{
         margin-left: 20px;
