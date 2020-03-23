@@ -97,12 +97,6 @@ export const updateCart = (state, action) => {
                 total: state.cart.total - removeItems.price * removeItems.count
             }
 
-        case 'ORDER_PLACED':
-            return {
-                order: [],
-                total: 0
-            };
-
         default:
             return state.cart;
     }

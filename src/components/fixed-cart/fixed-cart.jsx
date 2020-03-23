@@ -3,6 +3,19 @@ import { connect } from 'react-redux';
 import { itemRemoveFromCart, allItemsRemoveFromCart, itemAddToCart } from '../../actions';
 import './fixed-cart.scss'
 
+const sizeName = (name) => {
+    switch (name) {
+        case 'sm':
+            return 'Маленькая'
+        case 'md':
+            return 'Средняя'
+        case 'lg':
+            return 'Большая'
+        default:
+            return ''
+    }
+}
+
 class FixedCart extends React.Component {
 
     state = {
@@ -15,22 +28,7 @@ class FixedCart extends React.Component {
         })
     }
 
-    sizeName = (name) => {
-        switch (name) {
-            case 'sm':
-                return 'Маленькая'
-            case 'md':
-                return 'Средняя'
-            case 'lg':
-                return 'Большая'
-            default:
-                return ''
-        }
-    }
-
     render() {
-
-        console.log('Товары в корзине:', this.props.cart.order)
 
         const list = this.props.cart.order.map((item, index) => {
             const { id, title, size, count, total } = item;
@@ -39,7 +37,7 @@ class FixedCart extends React.Component {
                     <div>
                         <div>
                             <span className="fixed-cart__item-title">{title}</span>
-                            <span className="fixed-cart__item-size"> ({this.sizeName(size)})</span>
+                            <span className="fixed-cart__item-size"> ({sizeName(size)})</span>
                         </div>
                         <div className="fixed-cart__number">Кол-во: {count}, сумма: {total}руб.</div>
                     </div>
@@ -53,10 +51,13 @@ class FixedCart extends React.Component {
                 </li>
             )
         })
+
         const classNames = this.state.cartVisible ? "fixed-cart" : "fixed-cart fixed-cart--hidden"
+        
         if (this.props.cart.order.length < 1) {
             return null
         }
+        
         return (
             <div className={classNames}>
                 <div className="fixed-cart__header" onClick={() => this.toggle()}>

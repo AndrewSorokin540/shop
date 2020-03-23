@@ -1,7 +1,7 @@
-.cart-table{
+.order-table{
     width: 100%;
 }
-.cart-table tr{
+.order-table tr{
     height: 3em;
     &:nth-child(even){
         background-color: #aaaaaa45;
@@ -10,7 +10,7 @@
         padding-left: 15px;
     }
 }
-.cart-table__td-button{
+.order-table__td-button{
     width: 1%;
     white-space: nowrap;
 }

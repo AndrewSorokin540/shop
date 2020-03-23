@@ -1,8 +1,8 @@
 import React from 'react';
 import WithDataContext from '../HOC';
-import CatalogList from '../catalog-list';
 import DiscountsSlider from '../discounts-slider';
 import Search from '../search';
+import { PizzaList, DrinksList } from '../lists';
 import { connect } from 'react-redux';
 import { dataLoaded } from '../../actions';
 
@@ -19,9 +19,9 @@ class HomePage extends React.Component {
         return (
             <React.Fragment>
                 <DiscountsSlider />
-                <Search className='test' />
-                <CatalogList data={this.props.visibleItems.pizza} minicardType='cuttingBoard' />
-                <CatalogList data={this.props.visibleItems.drinks} minicardType='noBg' />
+                <Search />
+                <PizzaList />
+                <DrinksList />
             </React.Fragment>
         )
     }

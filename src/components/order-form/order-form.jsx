@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { placeOrder, openModalThanks } from '../../actions';
+import { openModalThanks } from '../../actions';
 import './order-form.scss';
 
 
@@ -136,26 +136,13 @@ export class OrderForm extends Component {
 
     onSubmit = (e) => {
         e.preventDefault();
-        const { street, building, room, phoneNumber } = this.state;
-        const { placeOrder } = this.props;
-
-        // placeOrder({
-        //     orderPlaced: true,
-        //     submitedStreet: street,
-        //     submitedBuilding: building,
-        //     submitedRoom: room,
-        //     submitedPhoneNumber: phoneNumber
-        // })
-
         this.props.openModalThanks()
-
         this.setState({
             street: '',
             building: '',
             room: '',
             phoneNumber: ''
         })
-
     }
 
     render() {
@@ -174,6 +161,6 @@ export class OrderForm extends Component {
     }
 }
 
-const mapDispatchToProps = ({ placeOrder, openModalThanks })
+const mapDispatchToProps = ({ openModalThanks })
 
 export default connect(null, mapDispatchToProps)(OrderForm);
