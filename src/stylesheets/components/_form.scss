@@ -3,6 +3,10 @@
   flex-direction: column;
 }
 
+input{
+  position: relative;
+  margin-bottom: 1.5em;
+}
 input.input-text {
   border-radius: 3px;
   border: 1px solid $dark-grey;
@@ -10,4 +14,9 @@ input.input-text {
 }
 input:focus {
   outline-color: $brand-color;
+}
+.input__error-text{
+  position: absolute;
+  bottom: 0;
+  color: $brand-color;
 }

@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { itemAddToCart, closeModal } from '../../actions';
+import sizeNameToRus from '../../utils';
 import './modal-order.scss';
 
 class ModalOrder extends React.Component {
@@ -49,12 +50,29 @@ class ModalOrder extends React.Component {
         }
     }
 
+    renderRadio = (currentItem, sizeName) => {
+        const currentItemKeys = Object.keys(currentItem.details)
+        return currentItemKeys.map(keyName => {
+            return (
+                <React.Fragment>
+                    <input key={currentItem.id} type="radio" name="size" value={keyName} id={`size-${keyName}`}
+                        checked={sizeName === keyName}
+                        onChange={this.handleOptionChange} />
+
+                    <label htmlFor={`size-${keyName}`}>{sizeNameToRus(keyName)}</label>
+                </React.Fragment>
+            )
+        })
+    }
+
     render() {
 
         // ToDo: решить проблему с разделенным массивом dataItems
         const totalDataItems = [...this.props.dataItems.pizza, ...this.props.dataItems.drinks];
 
-        const { title, details, coverImage, ingredientsInRus } = totalDataItems.find(item => item.id === this.props.openedItemId)
+        const currentItem = totalDataItems.find(item => item.id === this.props.openedItemId);
+        console.log(currentItem)
+        const { title, details, coverImage, ingredientsInRus } = currentItem;
         const { sizeName, itemsNumber } = this.state;
         return (
             <div className='modal-order'>
@@ -64,25 +82,7 @@ class ModalOrder extends React.Component {
                     <div className="modal-order__details">{this.mapSizeNameToSize(sizeName)} см{details[sizeName] && `, ${details[sizeName].weight}`}</div>
                     <p className="modal-order__ingridients">{ingredientsInRus}</p>
                     <form className="modal-order__size-form">
-
-                        <input type="radio" name="size" value='sm' id='size-sm'
-                            checked={sizeName === 'sm'}
-                            onChange={this.handleOptionChange} />
-
-                        <label htmlFor="size-sm">Маленькая</label>
-
-                        <input type="radio" name="size" value='md' id='size-md'
-                            checked={sizeName === 'md'}
-                            onChange={this.handleOptionChange} />
-
-                        <label htmlFor="size-md">Средняя</label>
-
-                        <input type="radio" name="size" value='lg' id='size-lg'
-                            checked={sizeName === 'lg'}
-                            onChange={this.handleOptionChange} />
-
-                        <label htmlFor="size-lg">Большая</label>
-
+                        {this.renderRadio(currentItem, sizeName)}
                     </form>
                     <div className='modal-order__number'>
                         Количество:

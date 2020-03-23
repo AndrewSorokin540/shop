@@ -5,14 +5,16 @@
 .button{
     border: none;
     padding: .75em;
-    cursor: pointer;
     border-radius: 3px;
     transition: background-color .2s;
+    &:not(.disabled){
+        cursor: pointer;
+    }
 }
 .button-primary{
     background-color: $brand-color;
     color: $text-color-light;
-    &:hover{
+    &:hover:not(.disabled){
         background-color: $brand-color-hover;
     }
 }

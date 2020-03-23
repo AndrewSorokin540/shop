@@ -15,16 +15,18 @@ const dataServise = new DataService();
 const App = () => (
     <Provider store={store}>
         <BrowserRouter>
-            <Header />
-            <main>
-                <DataProvider value={dataServise}>
-                    <div className="container">
-                        <Route path='/' exact component={HomePage} />
-                        <Route path='/cart' component={CartPage} />
-                        <Route path='/(pizza|drinks|)' component={FixedCart} />
-                    </div>
-                </DataProvider>
-            </main>
+            <ErrorBoundary>
+                <Header />
+                <main>
+                    <DataProvider value={dataServise}>
+                        <div className="container">
+                            <Route path='/' exact component={HomePage} />
+                            <Route path='/cart' component={CartPage} />
+                            <Route path='/(pizza|drinks|)' component={FixedCart} />
+                        </div>
+                    </DataProvider>
+                </main>
+            </ErrorBoundary>
         </BrowserRouter>
         <Modal />
     </Provider>

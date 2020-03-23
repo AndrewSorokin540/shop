@@ -1,4 +1,5 @@
 import React from 'react';
+import sizeNameToRus from '../../utils';
 import './order-table.scss';
 
 const OrderTable = ({ cart, itemRemoveFromCart, allItemsRemoveFromCart, itemAddToCart }) => (
@@ -8,8 +9,8 @@ const OrderTable = ({ cart, itemRemoveFromCart, allItemsRemoveFromCart, itemAddT
                 const { id, title, count, size } = item;
                 return (
                     <tr key={index}>
-                        <td>{title}</td>
-                        <td className='text-center'>{count}</td>
+                        <td>{title} ({sizeNameToRus(size)})</td>
+                        <td className='text-center'>{count} шт.</td>
                         <td className='order-table__td-button'><button className='button button-primary' onClick={() => itemRemoveFromCart(id, size)}>-</button></td>
                         <td className='order-table__td-button'><button className='button button-primary' onClick={() => allItemsRemoveFromCart(id, size)}>Удалить все</button></td>
                         <td className='order-table__td-button'><button className='button button-primary' onClick={() => itemAddToCart(id, 1, size)}>+</button></td>

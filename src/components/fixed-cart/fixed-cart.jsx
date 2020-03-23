@@ -2,25 +2,13 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { itemRemoveFromCart, allItemsRemoveFromCart, itemAddToCart } from '../../actions';
-import './fixed-cart.scss'
-
-const sizeName = (name) => {
-    switch (name) {
-        case 'sm':
-            return 'Маленькая'
-        case 'md':
-            return 'Средняя'
-        case 'lg':
-            return 'Большая'
-        default:
-            return ''
-    }
-}
+import sizeNameToRus from '../../utils';
+import './fixed-cart.scss';
 
 class FixedCart extends React.Component {
 
     state = {
-        cartVisible: true
+        cartVisible: false
     }
 
     toggle() {
@@ -38,7 +26,7 @@ class FixedCart extends React.Component {
                     <div>
                         <div>
                             <span className="fixed-cart__item-title">{title}</span>
-                            <span className="fixed-cart__item-size"> ({sizeName(size)})</span>
+                            <span className="fixed-cart__item-size"> ({sizeNameToRus(size)})</span>
                         </div>
                         <div className="fixed-cart__number">Кол-во: {count}, сумма: {total}руб.</div>
                     </div>

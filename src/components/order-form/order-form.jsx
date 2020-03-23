@@ -25,6 +25,9 @@ export class OrderForm extends Component {
                 placeholder: 'напр.: 2',
                 valid: false,
                 touched: false,
+                validation: {
+                    required: true,
+                }
             },
             street: {
                 value: '',
@@ -36,7 +39,6 @@ export class OrderForm extends Component {
                 touched: false,
                 validation: {
                     required: true,
-                    minLength: 6
                 }
             },
             building: {
@@ -49,7 +51,7 @@ export class OrderForm extends Component {
                 touched: false,
                 validation: {
                     required: true,
-                    minLength: 6
+                    maxLength: 4
                 }
             },
             room: {
@@ -62,7 +64,7 @@ export class OrderForm extends Component {
                 touched: false,
                 validation: {
                     required: true,
-                    minLength: 6
+                    maxLength: 4
                 }
             },
             phone: {
@@ -75,19 +77,18 @@ export class OrderForm extends Component {
                 touched: false,
                 validation: {
                     required: true,
-                    minLength: 6
+                    length: 11
                 }
             },
-        }
+        },
+        formValid: false
     }
 
     renderInputs = () => {
-        let focusedElement = document.activeElement;
         return Object.keys(this.state.formControls).map((controlName, index) => {
             const control = this.state.formControls[controlName]
-            const controlIsFocused = focusedElement.name === control.name;
             return (
-                <label key={index} className="col-12 col-md-6 col-lg-4 m-b-1 form-group">
+                <label key={index} className="col-12 col-md-6 col-lg-4 form-group">
                     {control.label}
                     <input
                         name={control.name}
@@ -97,7 +98,7 @@ export class OrderForm extends Component {
                         placeholder={control.placeholder}
                         onChange={e => this.handleInputChange(e)}
                     />
-                    {!control.valid && control.touched && !controlIsFocused && 'Данные введены некорректно'}
+                    <span className='input__error-text'>{!control.valid && control.touched && 'Введите корректные данные'}</span>
                 </label>
             )
         })
@@ -115,6 +116,12 @@ export class OrderForm extends Component {
         if (validation.minLength) {
             isValid = value.length >= validation.minLength && isValid
         }
+        if (validation.maxLength) {
+            isValid = value.length <= validation.maxLength && isValid
+        }
+        if (validation.length) {
+            isValid = value.length === validation.length && isValid
+        }
 
         return isValid;
     }
@@ -129,13 +136,20 @@ export class OrderForm extends Component {
                 value: [e.target.value]
             }
         }
+
+        const newFormControlsValids = Object.keys(newFormControls).map(key => newFormControls[key].valid)
+
+        const formValid = newFormControlsValids.every(validValue => validValue === true)
+
         this.setState({
-            formControls: newFormControls
+            formControls: newFormControls,
+            formValid
         })
     }
 
     onSubmit = (e) => {
         e.preventDefault();
+
         this.props.openModalThanks()
         this.setState({
             street: '',
@@ -145,7 +159,18 @@ export class OrderForm extends Component {
         })
     }
 
+    onCheck = (e) => {
+        e.preventDefault();
+        console.log(
+            Object.keys(this.state.formControls).map(key => {
+                return `${this.state.formControls[key].name}: ${this.state.formControls[key].valid}`
+            })
+        )
+    }
+
     render() {
+        const { formValid } = this.state;
+        const btnClassNames = `button button-primary ${formValid ? '' : 'disabled'}`
         return (
             <React.Fragment>
                 <h2 className='m-t-6'>Детали заказа</h2>
@@ -153,7 +178,7 @@ export class OrderForm extends Component {
                     {this.renderInputs()}
 
                     <div className="col-12 text-center m-t-1">
-                        <button type='submit' className='button button-primary' onClick={this.onSubmit}>Заказать</button>
+                        <button disabled={!formValid} type='submit' className={btnClassNames} onClick={this.onSubmit}>Заказать</button>
                     </div>
                 </form>
             </React.Fragment>

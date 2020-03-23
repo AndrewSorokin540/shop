@@ -336,10 +336,6 @@ export default class DataService {
                     md: {
                         price: 100,
                         weight: '1 л'
-                    },
-                    lg: {
-                        price: 120,
-                        weight: '1 л'
                     }
                 },
                 coverImage: imgCola
@@ -355,10 +351,6 @@ export default class DataService {
                     md: {
                         price: 100,
                         weight: '1 л'
-                    },
-                    lg: {
-                        price: 120,
-                        weight: '1 л'
                     }
                 },
                 coverImage: imgFanta
@@ -368,15 +360,11 @@ export default class DataService {
                 title: 'Sprite',
                 details: {
                     sm: {
-                        price: '0.5 л',
-                        weight: 0.5
+                        price: 80,
+                        weight: '0.5л'
                     },
                     md: {
                         price: 100,
-                        weight: '1 л'
-                    },
-                    lg: {
-                        price: 120,
                         weight: '1 л'
                     }
                 },
@@ -389,4 +377,3 @@ export default class DataService {
         setTimeout(() => resolve(this.data), 500)
     })
 }
-
