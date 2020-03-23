@@ -87,7 +87,7 @@ export class OrderForm extends Component {
             const control = this.state.formControls[controlName]
             const controlIsFocused = focusedElement.name === control.name;
             return (
-                <label key={index} className="col-12 col-md-6 col-lg-3 m-b-1 form-group">
+                <label key={index} className="col-12 col-md-6 col-lg-4 m-b-1 form-group">
                     {control.label}
                     <input
                         name={control.name}
@@ -149,7 +149,7 @@ export class OrderForm extends Component {
         return (
             <React.Fragment>
                 <h2 className='m-t-6'>Детали заказа</h2>
-                <form action='telegram.php' method='POST' className='order-form row'>
+                <form className='order-form row'>
                     {this.renderInputs()}
 
                     <div className="col-12 text-center m-t-1">

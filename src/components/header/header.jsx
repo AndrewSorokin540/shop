@@ -17,12 +17,6 @@ const Header = () => (
                                 <Link to='/'>Главная</Link>
                             </li>
                             <li>
-                                <a href="#">Пицца</a>
-                            </li>
-                            <li>
-                                <a href="#">Напитки</a>
-                            </li>
-                            <li>
                                 <Link to='/cart'>Корзина</Link>
                             </li>
                         </ul>

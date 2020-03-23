@@ -323,7 +323,7 @@ export default class DataService {
                 ingredientsInRus: 'Сыр моцарелла, сыр Творожный, томаты, маслины, лечо, лук маринованный, соусы ранч, чесночный, масло острое'
             }
         ],
-    
+
         drinks: [
             {
                 id: 17,
@@ -385,23 +385,8 @@ export default class DataService {
         ]
     }
 
-    
-
-    getPizza = () => {
-        return new Promise((resolve) => {
-            resolve(this.data.pizza)
-        })
-    }
-
-    getDrinks = () => {
-        return new Promise((resolve) => {
-            resolve(this.data.drinks)
-        })
-    }
-
-    getData = () => {
-        return new Promise((resolve) => {
-            resolve(this.data)
-        })
-    }
+    getData = () => new Promise(resolve => {
+        setTimeout(() => resolve(this.data), 500)
+    })
 }
+

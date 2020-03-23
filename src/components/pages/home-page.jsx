@@ -3,6 +3,7 @@ import WithDataContext from '../HOC';
 import DiscountsSlider from '../discounts-slider';
 import Search from '../search';
 import { PizzaList, DrinksList } from '../lists';
+import Loader from '../loader';
 import { connect } from 'react-redux';
 import { dataLoaded } from '../../actions';
 
@@ -16,12 +17,20 @@ class HomePage extends React.Component {
     }
 
     render() {
+        const dataLoaded = Object.keys(this.props.visibleItems).length > 0;
         return (
             <React.Fragment>
                 <DiscountsSlider />
                 <Search />
-                <PizzaList />
-                <DrinksList />
+                {
+                    dataLoaded ?
+                        <>
+                            <PizzaList />
+                            <DrinksList />
+                        </>
+                        :
+                        <Loader />
+                }
             </React.Fragment>
         )
     }

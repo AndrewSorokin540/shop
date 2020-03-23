@@ -9,8 +9,18 @@
     cursor: pointer;
     box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.5);
 
+    &__toggler{
+        width: 10px;
+        height: 10px;
+        border-left: 2px solid #fff;
+        border-bottom: 2px solid #fff;
+        transform: rotate(-45deg);
+    }
     &--hidden{
         transform: translateY(calc(100% - 52px));
+        .fixed-cart__toggler{
+            transform: rotate(135deg) translate(50%, -50%);
+        }
     }
     &__header{
         background-color: $brand-color;

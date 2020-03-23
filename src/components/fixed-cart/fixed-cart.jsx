@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { itemRemoveFromCart, allItemsRemoveFromCart, itemAddToCart } from '../../actions';
 import './fixed-cart.scss'
@@ -61,8 +62,8 @@ class FixedCart extends React.Component {
         return (
             <div className={classNames}>
                 <div className="fixed-cart__header" onClick={() => this.toggle()}>
-                    <span>Корзина</span>
-                    <span>Всего: {this.props.cart.total} руб.</span>
+                    <Link to='/cart' className='link-hover-underline' >Корзина ({this.props.cart.total} руб.)</Link>
+                    <div className='fixed-cart__toggler'/>
                 </div>
                 <div className="fixed-cart__body">
                     <ul className='fixed-cart__ul'>

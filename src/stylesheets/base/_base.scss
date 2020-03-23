@@ -31,4 +31,12 @@ a {
   @include on-event {
     color: $brand-color;
   }
+
+  &.link-hover-underline{
+    color: $text-color-light;
+    @include on-event {
+      color: $text-color-light;
+      text-decoration: underline;
+    }
+  }
 }
