@@ -78,6 +78,7 @@
         }
         button{
             padding: .25em 1em;
+            white-space: nowrap;
         }
 
         button:not(:last-child){

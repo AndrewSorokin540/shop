@@ -21,9 +21,9 @@ const App = () => (
                 <main>
                     <DataProvider value={dataServise}>
                         <div className="container">
-                            <Route path='(/|)' exact component={HomePage} />
+                            <Route path='/' exact component={HomePage} />
                             <Route path='/cart' component={CartPage} />
-                            <Route path='(/|)' component={FixedCart} />
+                            <Route path='/' exact component={FixedCart} />
                         </div>
                     </DataProvider>
                 </main>
