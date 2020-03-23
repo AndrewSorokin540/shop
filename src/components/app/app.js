@@ -3,6 +3,7 @@ import { BrowserRouter, Route } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import { DataProvider } from '../data-service-context';
 import { CartPage, HomePage } from '../pages';
+import ErrorBoundary from '../error-boundary';
 import store from '../../store';
 import DataService from '../../services/data-servise';
 import Header from '../header';
