@@ -1,5 +1,5 @@
 import React from 'react';
-import { Switch, BrowserRouter, Route, HashRouter } from 'react-router-dom';
+import { Route, HashRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import { DataProvider } from '../data-service-context';
 import { CartPage, HomePage } from '../pages';
@@ -15,17 +15,15 @@ const dataServise = new DataService();
 
 const App = () => (
     <Provider store={store}>
-        <HashRouter basename='/'>
+        <HashRouter basename='/shop'>
             <ErrorBoundary>
                 <Header />
                 <main>
                     <DataProvider value={dataServise}>
                         <div className="container">
-                            <Switch>
-                                <Route path='(/|)' exact component={HomePage} />
-                                <Route path='/cart' component={CartPage} />
-                                <Route path='(/|)' component={FixedCart} />
-                            </Switch>
+                            <Route path='(/|)' exact component={HomePage} />
+                            <Route path='/cart' component={CartPage} />
+                            <Route path='(/|)' component={FixedCart} />
                         </div>
                     </DataProvider>
                 </main>
