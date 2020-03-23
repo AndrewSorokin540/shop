@@ -88,7 +88,6 @@ export const updateCart = (state, action) => {
         case 'ALL_ITEMS_REMOVE_FROM_CART':
             const removeItemsIndex = state.cart.order.findIndex(item => item.id === action.payload.itemId && item.size === action.payload.size);
             const removeItems = state.cart.order[removeItemsIndex]
-            console.log(removeItemsIndex)
             return {
                 order: [
                     ...state.cart.order.slice(0, removeItemsIndex),

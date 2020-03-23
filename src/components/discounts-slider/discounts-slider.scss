@@ -4,6 +4,10 @@
     flex-direction: column;
     position: relative;
 
+    @media screen and (max-width: 991px) {
+        height: 300px;
+    }
+
     &__img{
         height: 100%;
         background-position: center;
@@ -12,7 +16,7 @@
 
     &__text{
         position: absolute;
-        padding: 0 0 0 2em;
+        padding: 0 2em;
         bottom: 0;
         width: 100%;
         left: 0;

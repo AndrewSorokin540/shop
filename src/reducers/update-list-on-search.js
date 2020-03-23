@@ -1,7 +1,7 @@
 export const updateListOnSearch = (state, action) => {
 
     if (!state) {
-        return []
+        return {}
     }
 
     switch (action.type) {

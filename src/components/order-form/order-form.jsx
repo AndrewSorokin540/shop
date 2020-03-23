@@ -159,15 +159,6 @@ export class OrderForm extends Component {
         })
     }
 
-    onCheck = (e) => {
-        e.preventDefault();
-        console.log(
-            Object.keys(this.state.formControls).map(key => {
-                return `${this.state.formControls[key].name}: ${this.state.formControls[key].valid}`
-            })
-        )
-    }
-
     render() {
         const { formValid } = this.state;
         const btnClassNames = `button button-primary ${formValid ? '' : 'disabled'}`

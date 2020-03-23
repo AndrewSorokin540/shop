@@ -52,14 +52,14 @@ class ModalOrder extends React.Component {
 
     renderRadio = (currentItem, sizeName) => {
         const currentItemKeys = Object.keys(currentItem.details)
-        return currentItemKeys.map(keyName => {
+        return currentItemKeys.map((keyName, index) => {
             return (
-                <React.Fragment>
-                    <input key={currentItem.id} type="radio" name="size" value={keyName} id={`size-${keyName}`}
+                <React.Fragment key={currentItem.id * index}>
+                    <input key={'inputKey' + currentItem.id * index} type="radio" name="size" value={keyName} id={`size-${keyName}`}
                         checked={sizeName === keyName}
                         onChange={this.handleOptionChange} />
 
-                    <label htmlFor={`size-${keyName}`}>{sizeNameToRus(keyName)}</label>
+                    <label key={'labelKey' + currentItem.id * index} htmlFor={`size-${keyName}`}>{sizeNameToRus(keyName)}</label>
                 </React.Fragment>
             )
         })
@@ -71,7 +71,6 @@ class ModalOrder extends React.Component {
         const totalDataItems = [...this.props.dataItems.pizza, ...this.props.dataItems.drinks];
 
         const currentItem = totalDataItems.find(item => item.id === this.props.openedItemId);
-        console.log(currentItem)
         const { title, details, coverImage, ingredientsInRus } = currentItem;
         const { sizeName, itemsNumber } = this.state;
         return (

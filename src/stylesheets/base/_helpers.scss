@@ -52,6 +52,10 @@
 .m-t-6{margin-top: 6em;}
 .m-b-6{margin-bottom: 6em;}
 
+.hidden-767-down{
+  @media screen and (max-width: 767px) {display: none;}
+}
+
 .w-100{
   width: 100%;
 }

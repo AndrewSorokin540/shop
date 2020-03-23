@@ -4,4 +4,10 @@
 body {
   color: $text-color;
   font: normal 100% / 1.4 $text-font-stack;
+  @media screen and (max-width: 991px) {
+    font-size: 15px;
+  }
+  @media screen and (max-width: 767px) {
+    font-size: 14px;
+  }
 }

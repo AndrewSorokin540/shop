@@ -12,7 +12,7 @@ const OrderTable = ({ cart, itemRemoveFromCart, allItemsRemoveFromCart, itemAddT
                         <td>{title} ({sizeNameToRus(size)})</td>
                         <td className='text-center'>{count} шт.</td>
                         <td className='order-table__td-button'><button className='button button-primary' onClick={() => itemRemoveFromCart(id, size)}>-</button></td>
-                        <td className='order-table__td-button'><button className='button button-primary' onClick={() => allItemsRemoveFromCart(id, size)}>Удалить все</button></td>
+                        <td className='order-table__td-button hidden-767-down'><button className='button button-primary' onClick={() => allItemsRemoveFromCart(id, size)}>Удалить все</button></td>
                         <td className='order-table__td-button'><button className='button button-primary' onClick={() => itemAddToCart(id, 1, size)}>+</button></td>
                     </tr>
                 )

@@ -8,7 +8,6 @@ export const updateModal = (state, action) => {
 
     switch (action.type) {
         case 'MODAL_PRODUCT_OPEN':
-            console.log('MODAL_PRODUCT_OPEN');
             return {
                 isModalOpen: true,
                 modalOpenType: 'product-modal',
