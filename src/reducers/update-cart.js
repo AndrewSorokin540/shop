@@ -35,8 +35,17 @@ export const updateCart = (state, action) => {
                 }
             }
             else {
-                // ToDo: решить проблему с разделенным массивом dataItems
-                const totalDataItems = [...state.dataItems.pizza, ...state.dataItems.drinks]
+
+                // ToDo: не работает через импорт
+                const concatObjectFields = (object) => {
+                    let result = [];
+                    Object.keys(object).forEach(key => {
+                        result = [...result, ...object[key]]
+                    })
+                    return result;
+                }
+
+                const totalDataItems = concatObjectFields(state.dataItems)
                 const addedItemNew = totalDataItems.find(item => item.id === action.payload.itemId)
                 const { id, title, details } = addedItemNew;
                 const { count, size } = action.payload;

@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { itemAddToCart, closeModal } from '../../actions';
-import sizeNameToRus from '../../utils';
+import { sizeNameToRus } from '../../utils';
 import './modal-order.scss';
 
 class ModalOrder extends React.Component {
@@ -67,8 +67,16 @@ class ModalOrder extends React.Component {
 
     render() {
 
-        // ToDo: решить проблему с разделенным массивом dataItems
-        const totalDataItems = [...this.props.dataItems.pizza, ...this.props.dataItems.drinks];
+        // ToDo: не работает через импорт
+        const concatObjectFields = (object) => {
+            let result = [];
+            Object.keys(object).forEach(key => {
+                result = [...result, ...object[key]]
+            })
+            return result;
+        }
+
+        const totalDataItems = concatObjectFields(this.props.dataItems);
 
         const currentItem = totalDataItems.find(item => item.id === this.props.openedItemId);
         const { title, details, coverImage, ingredientsInRus } = currentItem;

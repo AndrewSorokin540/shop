@@ -1,3 +1,7 @@
-import sizeNameToRus from './size-name-to-rus'
+import sizeNameToRus from './size-name-to-rus';
+import concatObjectFields from './concat-object-fields';
 
-export default sizeNameToRus
+export {
+    sizeNameToRus,
+    concatObjectFields
+}

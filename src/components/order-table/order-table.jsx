@@ -1,5 +1,5 @@
 import React from 'react';
-import sizeNameToRus from '../../utils';
+import { sizeNameToRus } from '../../utils';
 import './order-table.scss';
 
 const OrderTable = ({ cart, itemRemoveFromCart, allItemsRemoveFromCart, itemAddToCart }) => (

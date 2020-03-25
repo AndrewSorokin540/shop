@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { itemRemoveFromCart, allItemsRemoveFromCart, itemAddToCart } from '../../actions';
-import sizeNameToRus from '../../utils';
+import { sizeNameToRus } from '../../utils';
 import './fixed-cart.scss';
 
 class FixedCart extends React.Component {
