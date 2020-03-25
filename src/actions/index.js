@@ -27,8 +27,8 @@ export const openModalThanks = () => ({
     type: 'MODAL_THANKS_OPEN',
 })
 
-export const orderSent = () => ({
-    type: 'ORDER_SENT',
+export const clearCart = () => ({
+    type: 'CLEAR_CART',
 })
 
 export const closeModal = () => ({

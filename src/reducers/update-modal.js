@@ -19,10 +19,6 @@ export const updateModal = (state, action) => {
                 modalOpenType: 'thanks-modal',
                 orderDetails: action.payload
             }
-        case 'ORDER_SENT':
-            return {
-                isModalOpen: false,
-            }
         case 'MODAL_CLOSE':
             return {
                 isModalOpen: false

@@ -8,7 +8,7 @@ export const updateCart = (state, action) => {
     }
 
     switch (action.type) {
-        case 'ORDER_SENT':
+        case 'CLEAR_CART':
             return {
                 order: [],
                 total: 0

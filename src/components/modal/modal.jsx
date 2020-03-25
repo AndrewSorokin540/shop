@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { closeModal } from '../../actions';
 import ModalOrder from '../modal-order';
 import OrderSent from '../order-sent';
-import { orderSent } from '../../actions';
+import { clearCart } from '../../actions';
 import './modal.scss';
 
 class Modal extends React.Component {
@@ -12,7 +12,7 @@ class Modal extends React.Component {
         this.props.closeModal()
 
         if (this.props.modalOpenType === 'thanks-modal') {
-            this.props.orderSent()
+            this.props.clearCart()
         }
     }
     
@@ -40,6 +40,6 @@ class Modal extends React.Component {
 
 const mapStateToProps = ({ modal: { isModalOpen, modalOpenType } }) => ({ isModalOpen, modalOpenType })
 
-const mapDispatchToProps = { closeModal, orderSent }
+const mapDispatchToProps = { closeModal, clearCart }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Modal);
