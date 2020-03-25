@@ -5,3 +5,5 @@ const concatObjectFields = (object) => {
     })
     return result;
 }
+
+export default concatObjectFields;
