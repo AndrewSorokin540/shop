@@ -28,15 +28,18 @@ export default class DataService {
                 details: {
                     sm: {
                         price: 330,
-                        weight: '360 гр.'
+                        weight: '360 гр.',
+                        diameter: '35 см',
                     },
                     md: {
                         price: 420,
-                        weight: '470 гр.'
+                        weight: '470 гр.',
+                        diameter: '45 см'
                     },
                     lg: {
                         price: 650,
-                        weight: '720 гр.'
+                        weight: '720 гр.',
+                        diameter: '55 см'
                     }
                 },
                 coverImage: img1,
@@ -48,15 +51,18 @@ export default class DataService {
                 details: {
                     sm: {
                         price: 330,
-                        weight: '360 гр.'
+                        weight: '360 гр.',
+                        diameter: '35 см',
                     },
                     md: {
                         price: 420,
-                        weight: '470 гр.'
+                        weight: '470 гр.',
+                        diameter: '45 см'
                     },
                     lg: {
                         price: 650,
-                        weight: '720 гр.'
+                        weight: '720 гр.',
+                        diameter: '55 см'
                     }
                 },
                 coverImage: img2,
@@ -68,15 +74,18 @@ export default class DataService {
                 details: {
                     sm: {
                         price: 330,
-                        weight: '360 гр.'
+                        weight: '360 гр.',
+                        diameter: '35 см',
                     },
                     md: {
                         price: 420,
-                        weight: '470 гр.'
+                        weight: '470 гр.',
+                        diameter: '45 см'
                     },
                     lg: {
                         price: 650,
-                        weight: '720 гр.'
+                        weight: '720 гр.',
+                        diameter: '55 см'
                     }
                 },
                 coverImage: img3,
@@ -88,15 +97,18 @@ export default class DataService {
                 details: {
                     sm: {
                         price: 330,
-                        weight: '360 гр.'
+                        weight: '360 гр.',
+                        diameter: '35 см'
                     },
                     md: {
                         price: 420,
-                        weight: '470 гр.'
+                        weight: '470 гр.',
+                        diameter: '45 см'
                     },
                     lg: {
                         price: 650,
-                        weight: '720 гр.'
+                        weight: '720 гр.',
+                        diameter: '55 см'
                     }
                 },
                 coverImage: img4,
@@ -108,15 +120,18 @@ export default class DataService {
                 details: {
                     sm: {
                         price: 330,
-                        weight: '360 гр.'
+                        weight: '360 гр.',
+                        diameter: '35 см'
                     },
                     md: {
                         price: 420,
-                        weight: '470 гр.'
+                        weight: '470 гр.',
+                        diameter: '45 см'
                     },
                     lg: {
                         price: 650,
-                        weight: '720 гр.'
+                        weight: '720 гр.',
+                        diameter: '55 см'
                     }
                 },
                 coverImage: img5,
@@ -128,15 +143,18 @@ export default class DataService {
                 details: {
                     sm: {
                         price: 330,
-                        weight: '360 гр.'
+                        weight: '360 гр.',
+                        diameter: '35 см'
                     },
                     md: {
                         price: 420,
-                        weight: '470 гр.'
+                        weight: '470 гр.',
+                        diameter: '45 см'
                     },
                     lg: {
                         price: 650,
-                        weight: '720 гр.'
+                        weight: '720 гр.',
+                        diameter: '55 см'
                     }
                 },
                 coverImage: img6,
@@ -148,15 +166,18 @@ export default class DataService {
                 details: {
                     sm: {
                         price: 330,
-                        weight: '360 гр.'
+                        weight: '360 гр.',
+                        diameter: '35 см'
                     },
                     md: {
                         price: 420,
-                        weight: '470 гр.'
+                        weight: '470 гр.',
+                        diameter: '45 см'
                     },
                     lg: {
                         price: 650,
-                        weight: '720 гр.'
+                        weight: '720 гр.',
+                        diameter: '55 см'
                     }
                 },
                 coverImage: img7,
@@ -168,15 +189,18 @@ export default class DataService {
                 details: {
                     sm: {
                         price: 330,
-                        weight: '360 гр.'
+                        weight: '360 гр.',
+                        diameter: '35 см'
                     },
                     md: {
                         price: 420,
-                        weight: '470 гр.'
+                        weight: '470 гр.',
+                        diameter: '45 см'
                     },
                     lg: {
                         price: 650,
-                        weight: '720 гр.'
+                        weight: '720 гр.',
+                        diameter: '55 см'
                     }
                 },
                 coverImage: img8,
@@ -188,15 +212,18 @@ export default class DataService {
                 details: {
                     sm: {
                         price: 330,
-                        weight: '360 гр.'
+                        weight: '360 гр.',
+                        diameter: '35 см'
                     },
                     md: {
                         price: 420,
-                        weight: '470 гр.'
+                        weight: '470 гр.',
+                        diameter: '45 см'
                     },
                     lg: {
                         price: 650,
-                        weight: '720 гр.'
+                        weight: '720 гр.',
+                        diameter: '55 см'
                     }
                 },
                 coverImage: img9,
@@ -208,15 +235,18 @@ export default class DataService {
                 details: {
                     sm: {
                         price: 330,
-                        weight: '360 гр.'
+                        weight: '360 гр.',
+                        diameter: '35 см'
                     },
                     md: {
                         price: 420,
-                        weight: '470 гр.'
+                        weight: '470 гр.',
+                        diameter: '45 см'
                     },
                     lg: {
                         price: 650,
-                        weight: '720 гр.'
+                        weight: '720 гр.',
+                        diameter: '55 см'
                     }
                 },
                 coverImage: img10,
@@ -228,15 +258,18 @@ export default class DataService {
                 details: {
                     sm: {
                         price: 330,
-                        weight: '360 гр.'
+                        weight: '360 гр.',
+                        diameter: '35 см'
                     },
                     md: {
                         price: 420,
-                        weight: '470 гр.'
+                        weight: '470 гр.',
+                        diameter: '45 см'
                     },
                     lg: {
                         price: 650,
-                        weight: '720 гр.'
+                        weight: '720 гр.',
+                        diameter: '55 см'
                     }
                 },
                 coverImage: img11,
@@ -248,15 +281,18 @@ export default class DataService {
                 details: {
                     sm: {
                         price: 330,
-                        weight: '360 гр.'
+                        weight: '360 гр.',
+                        diameter: '35 см'
                     },
                     md: {
                         price: 420,
-                        weight: '470 гр.'
+                        weight: '470 гр.',
+                        diameter: '45 см'
                     },
                     lg: {
                         price: 650,
-                        weight: '720 гр.'
+                        weight: '720 гр.',
+                        diameter: '55 см'
                     }
                 },
                 coverImage: img12,
@@ -268,15 +304,18 @@ export default class DataService {
                 details: {
                     sm: {
                         price: 330,
-                        weight: '360 гр.'
+                        weight: '360 гр.',
+                        diameter: '35 см'
                     },
                     md: {
                         price: 420,
-                        weight: '470 гр.'
+                        weight: '470 гр.',
+                        diameter: '45 см'
                     },
                     lg: {
                         price: 650,
-                        weight: '720 гр.'
+                        weight: '720 гр.',
+                        diameter: '55 см'
                     }
                 },
                 coverImage: img13,
@@ -288,15 +327,18 @@ export default class DataService {
                 details: {
                     sm: {
                         price: 330,
-                        weight: '360 гр.'
+                        weight: '360 гр.',
+                        diameter: '35 см'
                     },
                     md: {
                         price: 420,
-                        weight: '470 гр.'
+                        weight: '470 гр.',
+                        diameter: '45 см'
                     },
                     lg: {
                         price: 650,
-                        weight: '720 гр.'
+                        weight: '720 гр.',
+                        diameter: '55 см'
                     }
                 },
                 coverImage: img14,
@@ -308,15 +350,18 @@ export default class DataService {
                 details: {
                     sm: {
                         price: 330,
-                        weight: '360 гр.'
+                        weight: '360 гр.',
+                        diameter: '35 см'
                     },
                     md: {
                         price: 420,
-                        weight: '470 гр.'
+                        weight: '470 гр.',
+                        diameter: '45 см'
                     },
                     lg: {
                         price: 650,
-                        weight: '720 гр.'
+                        weight: '720 гр.',
+                        diameter: '55 см'
                     }
                 },
                 coverImage: img15,
@@ -361,7 +406,7 @@ export default class DataService {
                 details: {
                     sm: {
                         price: 80,
-                        weight: '0.5л'
+                        weight: '0.5 л'
                     },
                     md: {
                         price: 100,

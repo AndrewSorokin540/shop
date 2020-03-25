@@ -37,19 +37,6 @@ class ModalOrder extends React.Component {
         this.props.closeModal()
     }
 
-    mapSizeNameToSize(sizeName) {
-        switch (sizeName) {
-            case 'sm':
-                return 35;
-            case 'md':
-                return 45;
-            case 'lg':
-                return 55;
-            default:
-                return null;
-        }
-    }
-
     renderRadio = (currentItem, sizeName) => {
         const currentItemKeys = Object.keys(currentItem.details)
         return currentItemKeys.map((keyName, index) => {
@@ -86,7 +73,7 @@ class ModalOrder extends React.Component {
                 <div className="modal-order__img" style={{ backgroundImage: `url(${coverImage})` }} />
                 <div className="modal-order__content">
                     <h2 className="modal-order__title">{title}</h2>
-                    <div className="modal-order__details">{this.mapSizeNameToSize(sizeName)} см{details[sizeName] && `, ${details[sizeName].weight}`}</div>
+                    <div className="modal-order__details">{details[sizeName].diameter && details[sizeName].diameter + ','} {details[sizeName].weight}</div>
                     <p className="modal-order__ingridients">{ingredientsInRus}</p>
                     <form className="modal-order__size-form">
                         {this.renderRadio(currentItem, sizeName)}
