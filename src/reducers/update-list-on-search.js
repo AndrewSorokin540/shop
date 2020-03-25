@@ -19,7 +19,7 @@ export const updateListOnSearch = (state, action) => {
                 drinks: state.dataItems.drinks.filter(item => item.title.toLowerCase().indexOf(action.payload.toLowerCase()) > -1)
             }
         default:
-            return state.dataItems;
+            return state.visibleItems;
     }
 }
 
