@@ -1,8 +1,8 @@
 import React from 'react';
-import { Route, HashRouter } from 'react-router-dom';
+import { Switch, Route, HashRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import { DataProvider } from '../data-service-context';
-import { CartPage, HomePage } from '../pages';
+import { CartPage, HomePage, NotFoundPage } from '../pages';
 import ErrorBoundary from '../error-boundary';
 import store from '../../store';
 import DataService from '../../services/data-servise';
@@ -21,12 +21,15 @@ const App = () => (
                 <main>
                     <DataProvider value={dataServise}>
                         <div className="container">
-                            <Route path='/' exact component={HomePage} />
-                            <Route path='/cart' component={CartPage} />
-                            <Route path='/' exact component={FixedCart} />
+                            <Switch>
+                                <Route path='/' exact component={HomePage} />
+                                <Route path='/cart' exact component={CartPage} />
+                                <Route path='/' exact component={FixedCart} />
+                                <Route component={NotFoundPage} />
+                            </Switch>
                         </div>
                     </DataProvider>
-                    <div id="pizzaID"/>
+                    <div id="pizzaID" />
                 </main>
             </ErrorBoundary>
         </HashRouter>
