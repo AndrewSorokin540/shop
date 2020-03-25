@@ -24,9 +24,9 @@ const App = () => (
                             <Switch>
                                 <Route path='/' exact component={HomePage} />
                                 <Route path='/cart' exact component={CartPage} />
-                                <Route path='/' exact component={FixedCart} />
                                 <Route component={NotFoundPage} />
                             </Switch>
+                            <Route path='/' exact component={FixedCart} />
                         </div>
                     </DataProvider>
                     <div id="pizzaID" />
