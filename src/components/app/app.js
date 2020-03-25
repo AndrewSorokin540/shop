@@ -26,6 +26,7 @@ const App = () => (
                             <Route path='/' exact component={FixedCart} />
                         </div>
                     </DataProvider>
+                    <div id="pizzaID"/>
                 </main>
             </ErrorBoundary>
         </HashRouter>

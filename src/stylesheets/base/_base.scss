@@ -24,9 +24,10 @@ html {
 /**
  * Basic styles for links
  */
-a {
+a, .link-style {
   color: $link-color;
   text-decoration: none;
+  cursor: pointer;
 
   @include on-event {
     color: $brand-color;
