@@ -1,17 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { itemAddToCart, closeModal } from '../../actions';
-import { sizeNameToRus } from '../../utils';
+import { sizeNameToRus, concatObjectFields } from '../../utils';
 import './modal-order.scss';
-
-// ToDo: не работает через импорт
-const concatObjectFields = (object) => {
-    let result = [];
-    Object.keys(object).forEach(key => {
-        result = [...result, ...object[key]]
-    })
-    return result;
-}
 
 const ModalOrderView = ({ currentItem, sizeName, itemsNumber, changeNumber, changeSize, onAddItem }) => {
     

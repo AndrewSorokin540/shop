@@ -1,3 +1,5 @@
+import { concatObjectFields } from '../utils';
+
 export const updateCart = (state, action) => {
 
     if (!state) {
@@ -17,16 +19,13 @@ export const updateCart = (state, action) => {
             const newItemAlreadyInCartIndex = state.cart.order.findIndex(item => item.id === action.payload.itemId && item.size === action.payload.size);
             const newItemAlreadyInCart = state.cart.order[newItemAlreadyInCartIndex]
             if (newItemAlreadyInCart) {
-                const { id, title, price, size, count } = newItemAlreadyInCart;
+                const { price, count } = newItemAlreadyInCart;
                 return {
                     order: [
                         ...state.cart.order.slice(0, newItemAlreadyInCartIndex),
                         {
-                            id,
-                            title,
+                            ...state.cart.order[newItemAlreadyInCartIndex],
                             count: newItemAlreadyInCart.count + action.payload.count,
-                            price,
-                            size,
                             total: price * (count + action.payload.count)
                         },
                         ...state.cart.order.slice(newItemAlreadyInCartIndex + 1)
@@ -35,17 +34,7 @@ export const updateCart = (state, action) => {
                 }
             }
             else {
-
-                // ToDo: не работает через импорт
-                const concatObjectFields = (object) => {
-                    let result = [];
-                    Object.keys(object).forEach(key => {
-                        result = [...result, ...object[key]]
-                    })
-                    return result;
-                }
-
-                const totalDataItems = concatObjectFields(state.dataItems)
+                const totalDataItems = concatObjectFields(state.dataItems) // объединяем подмассивы pizza и drinks в один массив
                 const addedItemNew = totalDataItems.find(item => item.id === action.payload.itemId)
                 const { id, title, details } = addedItemNew;
                 const { count, size } = action.payload;
@@ -86,10 +75,7 @@ export const updateCart = (state, action) => {
             }
             else {
                 return {
-                    order: [
-                        ...state.cart.order.slice(0, removeItemIndex),
-                        ...state.cart.order.slice(removeItemIndex + 1)
-                    ],
+                    order: [...state.cart.order.filter(item => item.id !== removeItem.id || item.size !== action.payload.size)],
                     total: state.cart.total - price
                 }
             }
@@ -98,10 +84,7 @@ export const updateCart = (state, action) => {
             const removeItemsIndex = state.cart.order.findIndex(item => item.id === action.payload.itemId && item.size === action.payload.size);
             const removeItems = state.cart.order[removeItemsIndex]
             return {
-                order: [
-                    ...state.cart.order.slice(0, removeItemsIndex),
-                    ...state.cart.order.slice(removeItemsIndex + 1)
-                ],
+                order: [...state.cart.order.filter(item => item.id !== removeItems.id || item.size !== action.payload.size)],
                 total: state.cart.total - removeItems.price * removeItems.count
             }
 
