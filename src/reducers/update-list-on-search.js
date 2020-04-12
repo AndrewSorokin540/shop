@@ -13,11 +13,13 @@ export const updateListOnSearch = (state, action) => {
             if (action.payload === '') {
                 return state.dataItems;
             }
-            return {
-                // ToDo: сделать универсально (для любого кол-ва полей dataItems)
-                pizza: state.dataItems.pizza.filter(item => item.title.toLowerCase().indexOf(action.payload.toLowerCase()) > -1),
-                drinks: state.dataItems.drinks.filter(item => item.title.toLowerCase().indexOf(action.payload.toLowerCase()) > -1)
-            }
+
+            let filteredData = {};
+            Object.keys(state.dataItems).forEach(key => {
+                filteredData[key] = state.dataItems[key].filter(item => item.title.toLowerCase().indexOf(action.payload.toLowerCase()) > -1)
+            });
+            return filteredData;
+            
         default:
             return state.visibleItems;
     }
