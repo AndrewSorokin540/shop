@@ -6,36 +6,32 @@ import OrderSent from '../order-sent';
 import { clearCart } from '../../actions';
 import './modal.scss';
 
-class Modal extends React.Component {
+const Modal = ({ isModalOpen, modalOpenType, closeModal, clearCart }) => {
 
-    onClose = () => {
-        this.props.closeModal()
+    const onClose = () => {
+        closeModal()
 
-        if (this.props.modalOpenType === 'thanks-modal') {
-            this.props.clearCart()
+        if (modalOpenType === 'thanks-modal') {
+            clearCart()
         }
     }
-    
-    render() {
-        const {isModalOpen, modalOpenType} = this.props;
 
-        if (!isModalOpen) {
-            return null
-        }
-        return (
-            <div className='modal'>
-                <div className="modal-content">
-                    <div className="modal-header">
-                        <button className='modal-close' onClick={this.onClose}>&times;</button>
-                    </div>
-                    <div className="modal-body">
-                        {modalOpenType === 'product-modal' && <ModalOrder />}
-                        {modalOpenType === 'thanks-modal' && <OrderSent /> }
-                    </div>
+    if (!isModalOpen) {
+        return null
+    }
+    return (
+        <div className='modal'>
+            <div className="modal-content">
+                <div className="modal-header">
+                    <button className='modal-close' onClick={onClose}>&times;</button>
+                </div>
+                <div className="modal-body">
+                    {modalOpenType === 'product-modal' && <ModalOrder />}
+                    {modalOpenType === 'thanks-modal' && <OrderSent />}
                 </div>
             </div>
-        );
-    }
+        </div>
+    );
 }
 
 const mapStateToProps = ({ modal: { isModalOpen, modalOpenType } }) => ({ isModalOpen, modalOpenType })
