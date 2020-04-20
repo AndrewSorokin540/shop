@@ -5,14 +5,14 @@ import { sizeNameToRus, concatObjectFields } from '../../utils';
 import './modal-order.scss';
 
 const ModalOrderView = ({ currentItem, sizeName, itemsNumber, changeNumber, changeSize, onAddItem }) => {
-    
+
     const renderRadio = (currentItem, sizeName) => {
         return Object.keys(currentItem.details).map((keyName, index) => {
             return (
                 <React.Fragment key={currentItem.id * index}>
                     <input key={'inputKey' + currentItem.id * index} type="radio" name="size" value={keyName} id={`size-${keyName}`}
                         checked={sizeName === keyName}
-                        onChange={changeSize} 
+                        onChange={changeSize}
                     />
                     <label key={'labelKey' + currentItem.id * index} htmlFor={`size-${keyName}`}>{sizeNameToRus(keyName)}</label>
                 </React.Fragment>
@@ -39,7 +39,7 @@ const ModalOrderView = ({ currentItem, sizeName, itemsNumber, changeNumber, chan
                         <button className='modal-order__num-btn increace' onClick={() => changeNumber('inc')}>+</button>
                     </div>
                 </div>
-                <button 
+                <button
                     className='modal-order__button-to-cart button button-primary'
                     onClick={() => onAddItem()}>
                     В корзину за {details[sizeName].price * itemsNumber}р.
@@ -56,11 +56,11 @@ const ModalOrder = ({ dataItems, openedItemId, itemAddToCart, closeModal }) => {
 
     const changeNumber = (val) => {
         if (val === 'inc') {
-            setItemsNumber(itemsNumber + 1)
+            setItemsNumber((itemsNumber) => itemsNumber + 1)
         }
         if (val === 'dec') {
             if (itemsNumber > 1) {
-                setItemsNumber(itemsNumber - 1)
+                setItemsNumber((itemsNumber) => itemsNumber - 1)
             }
         }
     }
@@ -76,14 +76,14 @@ const ModalOrder = ({ dataItems, openedItemId, itemAddToCart, closeModal }) => {
 
     const currentItem = concatObjectFields(dataItems).find(item => item.id === openedItemId);
 
-        return <ModalOrderView
-            currentItem={currentItem}
-            sizeName={sizeName}
-            itemsNumber={itemsNumber}
-            changeNumber={changeNumber}
-            changeSize={changeSize}
-            onAddItem={onAddItem}
-        />
+    return <ModalOrderView
+        currentItem={currentItem}
+        sizeName={sizeName}
+        itemsNumber={itemsNumber}
+        changeNumber={changeNumber}
+        changeSize={changeSize}
+        onAddItem={onAddItem}
+    />
 }
 
 const mapStateToProps = ({ dataItems, modal: { openedItemId } }) => ({ dataItems, openedItemId })

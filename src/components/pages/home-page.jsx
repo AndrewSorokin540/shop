@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import WithDataContext from '../HOC';
 import DiscountsSlider from '../discounts-slider';
 import Search from '../search';
@@ -7,33 +7,31 @@ import Loader from '../loader';
 import { connect } from 'react-redux';
 import { dataLoaded } from '../../actions';
 
-class HomePage extends React.Component {
+const HomePage = ({ visibleItems, dataLoaded, dataServise }) => {
 
-    componentDidMount() {
-        this.props.dataServise.getData()
+    useEffect(() => {
+        dataServise.getData()
             .then(data => {
-                this.props.dataLoaded(data)
+                dataLoaded(data)
             })
-    }
+    }, [])
 
-    render() {
-        const dataLoaded = Object.keys(this.props.visibleItems).length > 0;
-        return (
-            <React.Fragment>
-                <DiscountsSlider />
-                <Search />
-                {
-                    dataLoaded ?
-                        <>
-                            <PizzaList />
-                            <DrinksList />
-                        </>
-                        :
-                        <Loader />
-                }
-            </React.Fragment>
-        )
-    }
+    const lodaingDone = Object.keys(visibleItems).length > 0;
+    return (
+        <React.Fragment>
+            <DiscountsSlider />
+            <Search />
+            {
+                lodaingDone ?
+                    <>
+                        <PizzaList />
+                        <DrinksList />
+                    </>
+                    :
+                    <Loader />
+            }
+        </React.Fragment>
+    )
 }
 
 const mapStateToProps = ({ visibleItems }) => ({ visibleItems })

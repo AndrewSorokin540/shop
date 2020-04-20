@@ -39,7 +39,7 @@ const FixedCart = ({ itemRemoveFromCart, allItemsRemoveFromCart, itemAddToCart, 
     
     return (
         <div className={classNames}>
-            <div className="fixed-cart__header" onClick={() => setCartVisible(!cartVisible)}>
+            <div className="fixed-cart__header" onClick={() => setCartVisible((cartVisible) => !cartVisible)}>
                 <Link to='/cart' className='link-hover-underline' >Корзина ({cart.total} руб.)</Link>
                 <div className='fixed-cart__toggler'/>
             </div>
