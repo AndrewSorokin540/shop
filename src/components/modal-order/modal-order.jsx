@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import { itemAddToCart, closeModal } from '../../actions';
 import { sizeNameToRus, concatObjectFields } from '../../utils';
@@ -49,52 +49,41 @@ const ModalOrderView = ({ currentItem, sizeName, itemsNumber, changeNumber, chan
     );
 }
 
-class ModalOrder extends React.Component {
+const ModalOrder = ({ dataItems, openedItemId, itemAddToCart, closeModal }) => {
 
-    state = {
-        itemsNumber: 1,
-        sizeName: 'sm'
-    }
+    const [itemsNumber, setItemsNumber] = useState(1)
+    const [sizeName, setSizeName] = useState('sm')
 
-    changeNumber = (val) => {
+    const changeNumber = (val) => {
         if (val === 'inc') {
-            this.setState({
-                itemsNumber: this.state.itemsNumber + 1
-            })
+            setItemsNumber(itemsNumber + 1)
         }
         if (val === 'dec') {
-            if (this.state.itemsNumber > 1) {
-                this.setState({
-                    itemsNumber: this.state.itemsNumber - 1
-                })
+            if (itemsNumber > 1) {
+                setItemsNumber(itemsNumber - 1)
             }
         }
     }
 
-    changeSize = (e) => {
-        this.setState({
-            sizeName: e.target.value
-        })
+    const changeSize = (e) => {
+        setSizeName(e.target.value)
     }
 
-    onAddItem = () => {
-        this.props.itemAddToCart(this.props.openedItemId, this.state.itemsNumber, this.state.sizeName)
-        this.props.closeModal()
+    const onAddItem = () => {
+        itemAddToCart(openedItemId, itemsNumber, sizeName)
+        closeModal()
     }
 
-    render() {
-        const currentItem = concatObjectFields(this.props.dataItems).find(item => item.id === this.props.openedItemId);
-        const { sizeName, itemsNumber } = this.state;
+    const currentItem = concatObjectFields(dataItems).find(item => item.id === openedItemId);
 
         return <ModalOrderView
             currentItem={currentItem}
             sizeName={sizeName}
             itemsNumber={itemsNumber}
-            changeNumber={this.changeNumber}
-            changeSize={this.changeSize}
-            onAddItem={this.onAddItem}
+            changeNumber={changeNumber}
+            changeSize={changeSize}
+            onAddItem={onAddItem}
         />
-    }
 }
 
 const mapStateToProps = ({ dataItems, modal: { openedItemId } }) => ({ dataItems, openedItemId })
