@@ -15,7 +15,7 @@ const dataServise = new DataService();
 
 const App = () => (
     <Provider store={store}>
-        <HashRouter basename='/shop'>
+        <HashRouter basename='/'>
             <ErrorBoundary>
                 <Header />
                 <main>

@@ -86,19 +86,19 @@ export class OrderForm extends Component {
 
     renderInputs = () => {
         return Object.keys(this.state.formControls).map((controlName, index) => {
-            const control = this.state.formControls[controlName]
+            const { label, name, type, value, placeholder, valid, touched } = this.state.formControls[controlName]
             return (
                 <label key={index} className="col-12 col-md-6 col-lg-4 form-group">
-                    {control.label}
+                    {label}
                     <input
-                        name={control.name}
-                        type={control.type}
+                        name={name}
+                        type={type}
                         className='input-text'
-                        value={control.value}
-                        placeholder={control.placeholder}
+                        value={value}
+                        placeholder={placeholder}
                         onChange={e => this.handleInputChange(e)}
                     />
-                    <span className='input__error-text'>{!control.valid && control.touched && 'Введите корректные данные'}</span>
+                    <span className='input__error-text'>{!valid && touched && 'Введите корректные данные'}</span>
                 </label>
             )
         })

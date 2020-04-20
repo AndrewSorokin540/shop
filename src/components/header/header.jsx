@@ -33,8 +33,9 @@ class Header extends React.Component {
     }
 
     componentDidUpdate() {
-        if (document.getElementById(this.state.scrollTarget)) {
-            document.getElementById(this.state.scrollTarget).scrollIntoView({ block: 'start', behavior: 'smooth' });
+        const scrollTarget = document.getElementById(this.state.scrollTarget);
+        if (scrollTarget) {
+            scrollTarget.scrollIntoView({ block: 'start', behavior: 'smooth' });
             this.setState({
                 scrollTarget: null
             })
