@@ -7,8 +7,6 @@ import './fixed-cart.scss';
 
 const FixedCart = ({ itemRemoveFromCart, allItemsRemoveFromCart, itemAddToCart, cart }) => {
 
-    const [cartVisible, setCartVisible] = useState(false)
-
     const list = cart.order.map((item, index) => {
         const { id, title, size, count, total } = item;
         return (
@@ -30,6 +28,8 @@ const FixedCart = ({ itemRemoveFromCart, allItemsRemoveFromCart, itemAddToCart, 
             </li>
         )
     })
+
+    const [cartVisible, setCartVisible] = useState(false)
 
     const classNames = cartVisible ? "fixed-cart" : "fixed-cart fixed-cart--hidden"
     
